@@ -1,0 +1,5 @@
+a=open('file.txt','w')
+a.write('My name is bharat')
+a.close()
+f=open('file.txt','r')
+print(f.reads())

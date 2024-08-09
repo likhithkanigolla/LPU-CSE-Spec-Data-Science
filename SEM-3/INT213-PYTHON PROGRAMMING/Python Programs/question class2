@@ -1,0 +1,31 @@
+class quadratic_equation:
+    def __init__(self,a,b,c):
+        self.__a=a
+        self.__b=b
+        self.__c=c
+        
+    def getA(self):
+        print('Value of A',self.__a)
+    def getB(self):
+        print('Value of B',self.__b)
+    def getC(self):
+        print('Value of C',self.__c)
+
+    def getDiscriminant(self):
+        discriminant=((self.b)**2)-(4(self.a)(self.c))
+        return discriminant
+    
+    def getroot1():
+        r1=(-(self.__b)+((getDiscriminant())**0.5))/2(self.__a)
+        return r1
+
+    def getroot2():
+        r2=(-(self.__b)-((getDiscriminant())**0.5))/2(self.__a)
+        return r2
+
+a=int(input('Enter the value of A'))
+b=int(input('Enter the value of B'))
+c=int(input('Enter the value of C'))
+x=quadratic_equation(a,b,c)
+print(x.getDiscriminant())
+

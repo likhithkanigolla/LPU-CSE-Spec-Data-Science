@@ -1,0 +1,6 @@
+f=open('file2.txt','r')
+s=f.read(8)
+b=f.readline(4)
+print(s)
+print(b)
+f.close()
