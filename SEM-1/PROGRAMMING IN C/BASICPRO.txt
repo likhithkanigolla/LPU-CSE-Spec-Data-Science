@@ -1,0 +1,1027 @@
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n=100;
+clrscr();
+printf("value of n=%d",n);
+getch();
+}
+
+
+In c language all declerations wiil be done before the first executable
+statement   clrscr();
+
+
+2) Write a programme to initialize four standard data type variables
+   and display it initial data?
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n=100;
+char ch='g';
+float ft=143.23;
+double db=12345.89;
+clrscr();
+printf("n=%d",n);
+printf("\nch=%c",ch);
+printf("\nft=%f",ft);
+printf("\ndb=%lf",db);
+getch();
+}
+
+NOTE:-  By defaule floating values displays six digits after the
+	decimal points.
+
+	printf("\n ft=%.2f",ft);
+	printf(\n db=%.2lf",db);
+
+
+				CONSTANTS
+
+	constants in c refered to fixed values that do not change during the
+  execution of the programme.
+
+  const:-  It is a  keyword and is used to define constants.
+
+  syntax:- const datatype  identifier=value;
+  eg:-
+       const int n=100;
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+const int n=100;
+clrscr();
+printf("n=%d",n);
+	   //n=200 cannot modify
+printf("\nn=%d",n);
+getch();
+}
+
+
+SYMBOLIC CONSTANTS :-
+
+#define:- It is  a preprocessor statement and it is used to define symbolic
+constants.
+
+syn:-
+	#define identifier value
+
+eg:-
+       #define go 9.14
+       #define pi 7.13
+
+
+#include<stdio.h>
+#include<conio.h>
+#define go 9.8
+#define pi 3.14
+void main()
+{
+clrscr();
+printf("go=%lf",go);
+printf("\npi=%.2f",pi);
+getch();
+}
+
+WRITE A PROGRAMME TO ACCEPT AN INTEGER VALUE FROM KEY BOARD AND DISPLAY
+OF SCREEN.
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n;
+clrscr();
+printf("Enter any no  :");
+scanf("%d",&n);
+printf("\nGiven value:%d",n);
+getch();
+}
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n;
+char ch;
+clrscr();
+printf("Enter any no  :");
+scanf("%d",&n);
+printf("Enter any char  :");
+scanf("%c",&ch);
+printf("Given value :%d",n);
+printf("\nGiven char  :%c",ch);
+getch();
+}
+
+In the above programme it cannot read character data into the character
+variable because the integer reading statement creates the newline character
+and that will assigned to the character variable.
+
+fflush:- It is a prdefined function and it fflush it specify streams.
+syntax:-int fflush(stream name);
+
+flushall:-It flushall all open streams.
+syntax:-int flushall();
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n;
+char ch;
+clrscr();
+printf("Enter any no  :");
+scanf("%d",&n);
+printf("Enter any char  :");
+fflush(stdin);
+scanf("%c",&ch);
+printf("Given value :%d",n);
+printf("\nGiven char  :%c",ch);
+getch();
+}
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n;
+char ch;
+clrscr();
+printf("Enter any no  and char:");
+scanf("%d\n%c",&n,&ch);
+printf("Given value :%d",n);
+printf("\nGiven char  :%c",ch);
+getch();
+}
+
+WRITE A PROGRAMME TO DEVELOP FOUR STANDARD DATA TYPE VARIABLES,READ DATA
+FROM KEYBOARD.
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n;
+char ch;
+float ft;
+double db;
+clrscr();
+printf("Enter any no  :");
+scanf("%d",&n);
+printf("Enter any char  :");
+fflush(stdin);
+scanf("%c",&ch);
+printf("Enter any float  :");
+scanf("%f",&ft);
+printf("Enter any double  :");
+scanf("%lf",&db);
+printf("Given value :%d",n);
+printf("\nGiven char  :%c",ch);
+printf("\nGiven float :%f",ft);
+printf("\nGiven double:%lf",db);
+getch();
+}
+
+
+WRITE A PROGRAMME TO ACCEPT ANY CHARACTER AND DISPLAY ITS ASCCI VALUE?
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+char ch;
+clrscr();
+printf("Enter any character  :");
+scanf("%c",&ch);
+printf("ASCII value of given character   :%d",ch);
+getch();
+}
+
+TO ENTER ANY ASCII VALUE AND DISPLAY ITS CHARACTER?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n;
+clrscr();
+printf("Enter any ASCII value(0-255)  :");
+scanf("%d",&n);
+printf("Character of given Number   :%c",n);
+getch();
+}
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int i;
+clrscr();
+for(i=0;i<=255;i++)
+{
+printf("\n\n\n %d  ----%c",i,i);
+printf("\n");
+if(i%10==0 && i>0)
+{
+printf("\nPress any key continuee..........");
+getch();
+clrscr();
+}
+}
+getch();
+}
+
+
+STRING:-A group of characters define between double quotations marks is a
+string.But c language can array of characters and terminated by null
+character('\0')
+
+DECLERATION:-
+
+char identifier[size]="string";
+
+eg:-char st[10]="welcome";
+
+
+WRITE A PROGRAMME TO INITIALIZE A STRING AND DISPLAY?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+char st[10]="welcome";
+clrscr();
+printf("string st=%s",st);
+getch();
+}
+
+
+WRITE A PROGRAMME TO ACCEPT A STRING FROM KEYBOARD AND DISPLAY GIVEN
+STRING?
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+char st[20];
+clrscr();
+printf("Enter any string :");
+scanf("%s",&st);
+printf("Given string =%s",st);
+getch();
+}
+
+	The scanf statement cannot read to blank spaces for keyboard into a
+  string varible.
+
+	If you want to string with blank spaces into a string variable using
+  scanf statement by the following way:-
+
+  syntax:-
+  scanf("%[^\n]s",st);
+
+
+  gets:- It is a function which is used to read string with blank spaces
+  from keyboard.
+
+  declearation:-
+	char *gets(char *s);
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+char st[20];
+clrscr();
+printf("Enter any string :");
+    //scanf("%[^\n]",st);
+gets(st);
+printf("Given string =%s",st);
+getch();
+}
+
+WRITE A PROGRAMME TO ENTER ANY DATE FORMAT AND DISPLAY GIVEN DATE?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int d,m,y;
+clrscr();
+printf("Enter any date (dd-mm-yy)  :");
+scanf("%d-%d-%d",&d,&m,&y);
+printf("Given Date :%.2d-%.2d-%d",d,m,y);
+getch();
+}
+
+WRITE A PROGRAMME TO ACCEPT ANY DECIMAL NUMBER AND DISPLAYS ITS OCTAL,HEXA
+DECIMAL VALUES?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n;
+clrscr();
+printf("Enter any decimal no  :");
+scanf("%d",&n);
+printf("Given Number :%d",n);
+printf("\nOctal Number :%o",n);
+printf("\nHexa deciaml Number :%x",n);
+getch();
+}
+
+
+			   "OPERATORS IN C"
+
+OPERATOR:- It is a symbol which performs a particular operation
+
+OPERANT:- It is a entyty on which an operator acts.
+
+UNARY OPERATOR:- It requires only a single operant.
+
+BINARY OPERATOR:- It requires two operants.
+
+	'C' operators can be classified into a number of categories they
+	are
+
+	1)ARITHMATIC OPERATORS
+	2)RELATIONAL OPERATORS
+	3)LOGICAL OPERATORS
+	4)ASSIGNMENT OPERATORS
+	5)INCREMENT/DECREMENT OPERATORS
+	6)BITWISE OPERATORS
+	7)SPECIAL OPERATORS
+	  A)TERMINARY OPERATORS
+	  B)COMMA OPERATOR
+	  C)SIZEOF OPERATOR
+
+1)ARITHMATIC OPERATOR:-
+
+	These are the basic operators in c language.These are used for
+  arithmatic operations:-
+
+  +   addition
+  -   subtraction
+  *   multiplication
+  /   division
+  %   modulus(remainder)
+
+
+WRITE A PROGRAMME TO ENTER ANY TWO NUMBERS TEST ALL ARITHMATIC OPERATIONS?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a,b;
+clrscr();
+printf("Enter any two nos :");
+scanf("%d%d",&a,&b);
+printf("\nAddition      of %d  and %d is      :%d",a,b,a+b);
+printf("\nSubtraction of    %d and %d is      :%d",a,b,a-b);
+printf("\nMultiplication of %d and %d is      :%d",a,b,a*b);
+printf("\nDivision       of %d and %d is      :%d",a,b,a/b);
+printf("\nModulus        of %d and %d is      :%d",a,b,a%b);
+getch();
+}
+
+2)RELATIONAL OPERATOR:-
+
+	These are used to test the relation between two values or two
+  expressions.All c relational operators and hence it requires two operands
+
+
+  < less than
+  > greater than
+  <= less than or equalto
+  >= greater than or equal to
+
+  == equal to
+  != not equal to
+
+
+3)LOGICAL OPERATORS:-
+
+     It is used to combine result of two or more expressions
+
+  && logical and
+
+  || logical or
+
+  !  logical not
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+exp-1         exp-2             exp1&&exp2                exp1||exp2
+
+true          true               true                        true
+
+true          false              false                       true
+
+false         true               false                       true
+
+false         false              false                       false
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+
+exp1 ÄÄÄÄÄÄ>true  ! exp2 ÄÄÄÄÄÄ> false
+
+exp1 ÄÄÄÄÄÄ>false ! exp2 ÄÄÄÄÄÄ> true
+
+4) ASSIGNMENT OPERATORS:-It is used to assigned a value or the value
+of on expression  to an identifier.
+
+= assignment operator
+
+compound assignment operator or short hand assignment operator:
+
++=
+-=
+*=
+/=
+%=
+
+
+eg:-
+int a=5;
+a=a+5 or a+=5;
+
+
+
+
+
+
+
+5)INCREMENT/DECREMENT OPERATOR:-
+
+	These are used to control the loops in an efficient method.
+
+  INCREMENT OPERATOR:-
+
+	The symbol ++ is used for increment by 1
+
+	++identifier  ÄÄÄÄÄÄ->prefix increment
+
+	identifier++  ÄÄÄÄÄÄ>postfix increment
+
+	eg:-
+	int n=10;
+	++n (or) n++;
+	n=11;
+
+prefix:-
+int a=10,b;
+b=++a;
+a ÄÄÄÄÄ>11
+b ÄÄÄÄÄ>11
+
+postfix:-
+
+int a=10,b;
+b=a++;
+a ÄÄÄÄÄ>11
+b ÄÄÄÄÄ>10
+
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int i=10;
+clrscr();
+printf("%d\t%d",i,i++);
+getch();
+}
+
+
+DECREMENT OPERATOR:-
+
+	The symbol -- is used for decrement by 1
+
+	--identifier  ÄÄÄÄÄ>prefix decrement
+
+	identifier--  ÄÄÄÄÄ>postfix decrement
+
+	eg:-
+	int n=10;
+	--n (or) n--;
+	n=9;
+
+prefix:-
+int a=10,b;
+b=--a;
+a=9
+b=9
+
+
+postfix:-
+
+int a=10,b;
+b=a--;
+a=9
+b=10
+
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int i=10;
+clrscr();
+printf("%d\t%d",i,i--);
+getch();
+}
+
+
+BITWISE OPERATORS:-
+
+	These are used for manipulation of data of at bit level.These
+  operators are classified into two types namely:-
+
+  1)BITWISE LOGICAL OPERATORS
+  2)BITWISE SHIFT OPERATORS
+
+BITWISE LOGICAL OPERATOR:-These operators are used the bitwise logical
+decision making
+
+& bitwise logical and
+| bitwise logical or
+^ bitwise logical xor     (x-exclusive)
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+B1		B2		B1&B2		B1|B2		B1^B2
+
+1		1		 1		 1		 0
+
+1		0		 0		 1  		 1
+
+0 		1		 0		 1  		 1
+
+0		0		 0		 0		 0
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+EG:-
+
+a=5 b=6
+
+     1  0  1                1  0  1                  1  0  1
+
+     1  1  0                1  1  0                  1  1  0
+     ÄÄÄÄÄÄÄÄ               ÄÄÄÄÄÄÄÄ                 ÄÄÄÄÄÄÄÄ
+a&b= 1  0  0  =4       a|b= 1  1  1  =7         a^b = 0  1  1  =3
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a,b;
+clrscr();
+printf("Enter any two nos :");
+scanf("%d%d",&a,&b);
+printf("\na   =%d",a);
+printf("\nb   =%d",b);
+printf("\n   a&b     :%d",a&b);
+printf("\n   a|b     :%d",a|b);
+printf("\n   a^b     :%d",a^b);
+getch();
+}
+
+
+BITWISE SHIFT OPERATORS:-
+
+	The shift operation take binary patterns and shift the bits to the
+  left or right.
+
+	    << left shift operator
+	    >> right shift operator
+
+
+
+  int a=4,b,c
+  a=100  (binary number of 4)
+
+  b=a<<2;
+  c=a>>1;
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a=4,b,c;
+clrscr();
+b=a<<2;
+c=a>>1;
+
+printf("\na   =%d",a);
+printf("\nb   =%d",b);
+printf("\nc   =%d",c);
+getch();
+}
+
+
+
+
+SPECIAL OPERATOR:-
+
+A)TERINARY OPERATOR         (OR)
+  CONDITIONAL OPERATOR:-
+
+	A terinary operator pair ? : is available in the c language .It is
+  user to construct a conditional expression.
+
+	The general form of the terinary operator:
+
+	exp1?exp2:exp3;
+
+		If exp1 is true then exp2 is evaluated and its value becomes
+  value of the expression other wise exp1 is flase then exp3 is evaluated
+  and its value becomes value of expression.
+
+  eg:-
+  int a=20,b=10,max;
+
+  max=a>b?a:b;
+  a=20;
+  b=10;
+  max=20;
+
+
+
+  eg2:-
+
+  int a=20,b=10,min;
+  min=a<b?a:b;
+
+  a=20;
+  b=10;
+  min=10;
+
+  WRITE A PROGRAMME TO MAX AND MIN VALUES OF GIVEN TWO NUMBERS USING
+  TERINARY OPERATORS?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a,b,max,min;
+clrscr();
+printf("Enter any two nos :");
+scanf("%d%d",&a,&b);
+max=a>b?a:b;
+
+
+min=a<b?a:b;
+
+printf("Max value :%d",max);
+printf("\nMin value :%d",min);
+getch();
+}
+
+
+
+
+FIND THE MAX AND MIN VALUES OF GIVEN THREE VALUES USING TERMINARY OPERATOR?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a,b,c,max,min;
+clrscr();
+printf("Enter any two nos :");
+scanf("%d%d%d",&a,&b,&c);
+max=a>b?a:b;
+max=max>c:max:c;
+min=a<b?a:b;
+min=min<c:min:c;
+
+//max=a>b && a>c?a:b>c?b:c;
+//min=a<b && a<c?a:b<c?b:c;
+
+printf("Max value :%d",max);
+printf("\nMin value :%d",min);
+getch();
+}
+
+COMMA OPERATOR:-
+
+	It can be used the link the related expressions together the general
+  form of the comma operator is:-
+
+  eg:-
+  int a,b,c;
+  c=(a=10,b=20,a+b);
+  a=10;
+  b=20;
+  c=30;
+
+  In the above example first assigns the value of 10 to a then 20 to b
+  and finally assigns 30 to c(a+b)
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a,b,c;
+clrscr();
+c=(a=10,b=20,a+b);
+printf("a =%d",a);
+printf("\nb =%d",b);
+printf("\nc =%d",c);
+getch();
+}
+
+sizeof-operator:-
+
+	It is a compile time operator and is used to get the memory size of
+  specified variable or expression or datatype.
+
+  syntax:-
+
+  (var (or) exp (or) datatype);
+
+  eg:-
+
+  sizeof(int)    ÄÄÄÄÄÄÄÄ> 2 bytes
+  sizeof(char)   ÄÄÄÄÄÄÄÄ> 1 byte
+  sizeof(float)  ÄÄÄÄÄÄÄÄ> 4 bytes
+  sizeof(double) ÄÄÄÄÄÄÄÄ> 8 bytes
+
+
+  eg 2:-
+  int a,b;
+
+  sizeof(a)   ÄÄÄÄÄÄÄÄ> 2 bytes
+  sizeof(b)   ÄÄÄÄÄÄÄÄ>2 bytes
+  sizeof(a+b) ÄÄÄÄÄÄÄÄ>2 bytes
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n;
+char ch;
+float ft;
+double db;
+clrscr();
+printf("sizeof int          :%d bytes",sizeof(int));
+printf("\nsizeof char       :%d byte",sizeof(char));
+printf("\nsizeof float      :%d bytes",sizeof(float));
+printf("\nsizeof double     :%d bytes",sizeof(double));
+getch();
+}
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a,b;
+clrscr();
+printf("sizeof a          :%d bytes",sizeof(a));
+printf("\nsizeof b        :%d bytes",sizeof(b));
+printf("\nsizeof a+b      :%d bytes",sizeof(a+b));
+getch();
+}
+
+ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+  #  Category   ³ Operator ³ What it is (or does)
+ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+  1. Highest    ³    ()    ³ Function call
+		³    []    ³ Array subscript
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  2. Unary      ³     !    ³ Logical negation (NOT)
+		³     +    ³ Unary plus
+		³     -    ³ Unary minus
+		³    ++    ³ Preincrement or postincrement
+		³    --    ³ Predecrement or postdecrement
+		³     &    ³ Address
+		³     *    ³ Indirection
+		³  sizeof  ³ (returns size of operand, in bytes)
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  3. Multipli-  ³     *    ³ Multiply
+     cative     ³     /    ³ Divide
+		³     %    ³ Remainder (modulus)
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  4. Additive   ³     +    ³ Binary plus
+		³     -    ³ Binary minus
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  5. Shift      ³    <<    ³ Shift left
+		³    >>    ³ Shift right
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  6. Relational ³     <    ³ Less than
+		³    <=    ³ Less than or equal to
+		³     >    ³ Greater than
+		³    >=    ³ Greater than or equal to
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  7. Equality   ³    ==    ³ Equal to
+		³    !=    ³ Not equal to
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  8.            ³     &    ³ Bitwise AND
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  9.            ³     ^    ³ Bitwise XOR
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ 10.            ³     |    ³ Bitwise OR
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ 11.            ³    &&    ³ Logical AND
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ 12.            ³    ||    ³ Logical OR
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ 13. Conditional³    ?:    ³ (a ? x : y  means "if a then x, else y")
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ 14. Assignment ³     =    ³ Simple assignment
+		³    *=    ³ Assign product
+		³    /=    ³ Assign quotient
+		³    %=    ³ Assign remainder (modulus)
+		³    +=    ³ Assign sum
+		³    -=    ³ Assign difference
+		³    &=    ³ Assign bitwise AND
+		³    ^=    ³ Assign bitwise XOR
+		³    |=    ³ Assign bitwise OR
+		³   <<=    ³ Assign left shift
+		³   >>=    ³ Assign right shift
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ 15. Comma      ³     ,    ³ Evaluate
+ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+
+
+TYPE CASTING OR TYPE CONVERSION:-
+
+	The process are converting is one devided by is another is called as
+  type casting.
+
+	In c language type conversion is a arithmatic conversion will be done
+  automatically this is called Implicit conversion.
+
+	If you want store a value of one type into a variable of another type
+  we must caste the value to be stored by preceeding with type name in
+  parenthasis.
+
+
+  int a,b;
+  float c,d;
+
+  a=5;
+  b=2;
+
+  c=a/b;      implicit conversion   or   arithmatic conversion
+
+  c=2.00
+
+  d=(float)a/b;  explicit conversion or type casting
+
+  d=2.50
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a,b;
+float c,d;
+clrscr();
+printf("Enter any two values:");
+scanf("%d%d",&a,&b);
+c=a/b;
+d=(float)a/b;
+printf("a  =%d",a);
+printf("\nb  =%d",b);
+printf("\nc  =%.2f",c);
+printf("\nd  =%.2f",d);
+getch();
+}
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int sno,c,cpp,unix,total;
+char sname[20];
+float avg;
+
+
+clrscr();
+
+
+printf("Enter student number:");
+scanf("%d",&sno);
+printf("Enter student name :");
+fflush(stdin);
+gets(sname);
+
+
+printf("Enter marks in c,cpp,unix :");
+scanf("%d%d%d",&c,&cpp,&unix);
+
+
+total=c+cpp+unix;
+avg=(float)total/3;
+
+clrscr();
+printf("\nStudent number   :%d",sno);
+printf("\nStudent name     :%s",sname);
+printf("\nmarks in c       :%d",c);
+printf("\nmarks in cpp     :%d",cpp);
+printf("\nmarks in unix    :%d",unix);
+printf("\nTotal marks      :%d",total);
+printf("\nAverage          :%.2f",avg);
+getch();
+}
+COMPOUND STATEMENT:-
+
+	A compound statement consists one or more instructions and those
+  instructions are enclose with in the curling(flower) basis.
+
+  1)A variable which is declared above the compound statment.It is
+    accessible both inside and outside that compound statment.
+
+  2)A variable which is declared inside the compound statement.It is not
+    available outside the compound statement.
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a=100;
+clrscr();
+
+printf("a =%d",a);
+{
+int b=200;
+printf("\na =%d",a);
+printf("\nb =%d",b);
+}
+printf("\na =%d",a);
+       //printf("\nb =%d",b);
+getch();
+}
+
+3)It is possible to declare a variable with the same name to inside and
+  outside the compound statement.
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a=100;
+clrscr();
+printf("a =%d",a);
+{
+int a=200;
+printf("\na =%d",a);
+}
+printf("\na =%d",a);
+getch();
+}
+
+
+
+
+
+
+
+
+WRITE A PROGRAMME TO ENTER ANY TWO VALUES AND DISPLAY SWAPING GIVEN TWO
+VALUES?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a,b,t;
+clrscr();
+printf("Enter any two values:");
+scanf("%d%d",&a,&b);
+printf("Before swaping");
+printf("\na value   =%d",a);
+printf("\nb value  =%d",b);
+t=a;
+a=b;
+b=t;
+printf("\nAfter swaping");
+printf("\na value   =%d",a);
+printf("\nb value  =%d",b);
+getch();
+}

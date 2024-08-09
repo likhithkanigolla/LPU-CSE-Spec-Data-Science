@@ -1,0 +1,956 @@
+ 				POINTERS
+
+    C provides the important feature data manipulations with the address of
+    the variables.Hence the execution time is very much reduced.Such concept
+    is possible with the special data type called 'POINTERS'.
+
+    POINTER:- A pointer is a variable which stores the address of another
+    variable.
+
+    DECLARATION:-Pointer declaration is similar to normal variable declaration
+    but preceeded by '*'.
+
+		    datatype *identifier;
+
+Ex:- int *p;
+
+INITIALISATION:-At the time declaring a pointer we can store some address
+into that pointer is called as initialisation.
+
+datatype *identifier=address;
+
+    Ex1:-                               Ex2:-
+
+	  int n;                       int n;
+	  int *p;                      int *p=&n;
+	  p=&n;
+
+
+     NULL:-
+	    NULL pointer value(empty address)
+
+		Any type of pointer allocates two bytes of memory because it
+   stores address of memory location.In c language the programme heep(memory)
+   size is 64 kilobytes.It is in unsigned integer range.
+
+			 int *p1    ------ 2 bytes
+			 char *p2   ------ 2 bytes
+			 float *p3  ------ 2 bytes
+			 double *p4 ------ 2 bytes
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int *p1;
+char *p2;
+float *p3;
+double *p4;
+clrscr();
+printf("Size of int         pointer    :%d bytes  ",sizeof(p1));
+printf("\nSize of char      pointer    :%d bytes  ",sizeof(p2));
+printf("\nSize of float     pointer    :%d bytes  ",sizeof(p3));
+printf("\nSize of double    pointer    :%d bytes  ",sizeof(p4));
+getch();
+}
+
+
+
+
+void  *:-It is a generic pointer it refers the address of any type of
+variable and also assign to the any type of pointer.
+
+Ex:-  ACCESSING POINTERS:-    ³       int n=100,*p;
+     int n=100;               ³       p=&n;
+     int *p=&n;               ³
+This  is initialisation       ³
+			      ³
+		n	      ³              p
+		ÚÄÄÄÄÄÄÄ¿     ³        ÚÄÄÄÄÄÄÄ¿
+value ÄÄÄÄÄÄÄÄÄ>³ 100   ³<ÄÄÄÄ³ÄÄÄÄÄÄÄÄ³ 5000  ³
+		ÀÄÄÄÄÄÄÄÙ     ³	       ÀÄÄÄÄÄÄÄÙ
+address ÄÄÄÄÄÄÄ>  5000	      ³
+			      ³
+			      ³
+		 n=100	      ³       p=5000
+		 &n=5000      ³       *p=100
+			      ³
+			      ³
+			      ³    This block is fast execute.
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n=100;
+int *p=&n;
+clrscr();
+printf("Value of n             :%d",n);
+printf("\nAddress of n         :%u",&n);
+printf("\nValue of n using p   :%d",*p);
+printf("\naddress of n using p :%u",p);
+n=5000;
+printf("\nValue of n using p   :%d",*p);
+*p=800;
+printf("\nValue of n           :%d",n);
+getch();
+}
+
+CALLING MECHANISM OF A ARGUMENT FUNCTION
+		   OR
+PARAMETER PASSING TECHNIQUES
+
+CALL BY VALUE:-
+   This process of passing the value to the function call is
+   known as call by value.
+
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+void func(int);
+clrscr();
+func(100);
+getch();
+}
+
+void func(int y)
+{
+printf("%d",y);
+}
+
+
+
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+void sum(int,int);
+int a,b;
+clrscr();
+printf("Enter any two values:");
+scanf("%d%d",&a,&b);
+sum(a,b);
+getch();
+}
+void sum(int x,int y)
+{
+printf("Sum is %d",x+y);
+}
+CALL BY REFERENCE:-
+   The process of calling a function using pointers function arguments
+   to pass address of the variables into that pointers is known as
+   call by reference.
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n;
+void func(int *);
+clrscr();
+func(&n);
+printf("n=%d",n);
+getch();
+}
+
+void func(int *p)
+{
+*p=500;
+}
+
+
+W.P.accept a value using call by reference and display given value:-
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+void accept(int *);
+int n;
+clrscr();
+accept(&n);
+printf("Given value =%d",n);
+getch();
+}
+void accept(int *p)
+{
+printf("Enter any value :");
+scanf("%d",p);
+}
+
+W.P.accept employee data using call by reference and display:-
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int eno;
+char ename[20];
+float sal;
+void accept(int *,char [],float *);
+clrscr();
+accept(&eno,ename,&sal);
+printf("Employee number   :%d",eno);
+printf("\nEmployee name   :%s",ename);
+printf("\nemployee salary :%.2f",sal);
+getch();
+}
+void accept(int *no,char name[],float *s)
+{
+printf("Enter   Employee number :");
+scanf("%d",no);
+printf("Enter Employee name :");
+fflush(stdin);
+gets(name);
+printf("Enter Salary      :");
+scanf("%f",s);
+}
+
+W.P.Swaping the given two values using call by reference:-
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+void swap(int *,int *);
+int a,b;
+clrscr();
+printf("Enter any two values:");
+scanf("%d%d",&a,&b);
+
+printf("\nBefore swaping   :");
+printf("\n a  =%d",a);
+printf("\n b  =%d",b);
+
+swap(&a,&b);
+
+printf("\nafter swaping   :");
+printf("\n a  =%d",a);
+printf("\n b  =%d",b);
+getch();
+}
+
+void swap(int *x,int *y)
+{
+int t;
+t=*x;
+*x=*y;
+*y=t;
+}
+
+
+
+
+			   ARRAYS AND POINTERS
+
+    When an array is declared,the compiler allocates a base address and
+    sufficient amount of storage to contain all the elements array in
+    continuous memory location.The base address is the location of the first
+    element(index 0)of the array.The compiler also defines the array name
+    as a constant pointer to the first array name as a constant pointer to
+    the first element.
+
+
+    #include<stdio.h>
+    #include<conio.h>
+       void main()
+    {
+    int a[5];
+    clrscr();
+    printf("Base address  :%lu",&a[0]);
+    printf("\nBase address  :%lu",a);
+    getch();
+    }
+
+Suppose we declare an array 'a' as follows:-
+
+int a[5]={1,2,3,4,5};
+
+
+suppose the base address of a is 1000 and assuming each integer
+requires 2 bytes.The five elements will be stored as follows
+
+
+Elements ÄÄÄÄÄÄÄ>   a[0]      a[1]    a[2]      a[3]    a[4]
+		  ÚÄÄÄÄÄÄÄÄÚÄÄÄÄÄÄÄÄÚÄÄÄÄÄÄÄÄ¿ÄÄÄÄÄÄÄÄÚÄÄÄÄÄÄÄÄ¿
+Values  ÄÄÄÄÄÄÄÄ> ³  1     ³  2     ³   3    ³    4   ³   5    ³
+		  ÀÄÄÄÄÄÄÄÄÀÄÄÄÄÄÄÄÄÀÄÄÄÄÄÄÄÄÀÄÄÄÄÄÄÄÄÀÄÄÄÄÄÄÄÄÙ
+AddressesÄÄÄÄÄÄÄ>   1000      1002     1004     1006     1008
+		     ³
+		     ³
+		Base adderess
+
+	The name a is defined as a constant pointer to point to the first
+	element a[0].And therefore the value of a is 1000, the location
+	where a[0] is stored.That is a =&a[0]=1000.
+
+	a=1000;
+	a+1=1002;
+	a+2=1004;
+
+	If we declare p as an integer pointer.Then we can make that pointer
+	p to point to the array a by the following the assignment.
+
+	a=&a[0]=1000;
+
+	int *p;
+
+	p=&a[0];
+	  (or)
+	 p=a;
+
+       Now we can access every value of a using  p+0,p+1,p+2----
+       to move one element to another.The relationship between p and a
+       is shown below
+
+	     p+0=&a[0]=1000;
+	     p+1=&a[1]=1002;
+	     p+2=&a[2]=1004;
+	     p+3=&a[3]=1006;
+
+
+	     When handling array instead of using of array you can use
+pointers to access array elements.
+
+note that *(p+i) use the value a[i].
+
+The pointer accessing method is much faster than array indexing.
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a[20],n,i,*p;
+clrscr();
+
+printf("Enter no of elements :");
+scanf("%d",&n);
+
+p=&a[0];
+
+printf("Enter array elements  :");
+for(i=0;i<n;i++)
+{
+scanf("%d",p+i);
+}
+printf("Given elements  :");
+for(i=0;i<n;i++)
+{
+printf("%5d",*(p+i));
+}
+getch();
+}
+
+
+
+
+
+
+			POINTERS AND STRINGS
+
+	A pointer can also pointer to a string.
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+char *st;
+clrscr();
+printf("Enter any string:");
+gets(st);
+printf("Given string :%s",st);
+getch();
+}
+
+
+
+		DYNAMIC MEMORY ALLOCATION
+
+	C requires the number of elements in the array to be specifier it
+  compile time.But it may not be able to used to always our initial
+  judgement of size,it is wrong may use failure of the programme or vastage
+  of memory space.If the situation we can use dynamic memory allocation.
+
+	The process of allocate a memory at run time is knwon as dynamic
+  memory allocation.
+
+
+malloc   :-                          <alloc.h>
+It is used to allocating memory at run time.
+
+syn:-
+void *malloc(size-t size);
+
+
+size_t:-
+
+Type used for memory object sizes (integer another name)
+
+void *    --------------->generic pointer typecasting
+malloc
+size_t size ------------->memorysize
+
+
+Ex:-
+
+int *a;
+a=(int *)malloc(sizeof(int));          1 location
+
+a=(int  *)malloc(5*sizeof(int));       5 locations
+
+
+calloc:-
+It is also allocating memory at runtime.
+
+syn:-
+void *calloc(size-t  nitems,size_t size);
+pointer=(typecasting)calloc(no of items,memorysize of each item);
+
+
+eg:-
+
+int *a;
+a=(int *)calloc(1,sizeof(int));          1 location
+a=(int *)calloc(5, sizeof(int));       5 locations
+
+calloc allocates a block (n items *size)bytes
+and allocate by default value 0.
+
+but malloc allocates gabrage values.
+
+
+free:-
+It frees allocated blocks at runtime
+
+decleration:-
+void free(void *block);
+
+free deallocates a memory block allocated by a previous call to
+calloc,malloc or realloc.
+
+WRITE A PROGRAMME A DYNAMIC ARRAY(VECTOR) STORE VALUES FROM KEYBOARD
+DISPLAY?
+
+#include<stdio.h>
+#include<conio.h>
+#include<alloc.h>
+
+void main()
+{
+int *a,n,i;
+clrscr();
+printf("Enter no of elements :");
+scanf("%d",&n);
+a=(int *)malloc(n*sizeof(int));
+  //a=(int *)calloc(n,sizeof(int));
+
+printf("Enter array elements :\n");
+for(i=0;i<n;i++)
+{
+scanf("%d",a+i);
+}
+printf("Given elements:");
+for(i=0;i<n;i++)
+{
+printf("%d\t",*(a+i));
+}
+free(a);
+
+getch();
+}
+
+
+WRITE A PROGRAMME TO CREATE A DYNAMIC TWO DYMENSIONAL ARRAY(TWO DIMENSIONAL
+VECTOR) READ VALUES FROM KEYBOARD AND DISPALAY?
+
+
+
+
+
+
+working:-
+
+int **a;
+int r=3,c=3,i,j;
+a=(int **)malloc(r *sizeof(int *));
+for(i=0;i<r;i++)
+{
+*(a+i)=(int *)malloc(sizeof(int));
+
+
+addresses:-
+
+1 row: *(a+0)+0 	     *(a+0)+1             *(a+0)+2
+2 row: *(a+1)+0 	     *(a+1)+1             *(a+1)+2
+3 row: *(a+2)+0 	     *(a+2)+1             *(a+2)+2
+
+
+
+addresses:- *(a+i)+j
+values   :-*(*(a+i)+j)
+
+values:-
+
+1 row: *(*(a+0)+0 	     *(*(a+0)+1            *(*(a+0)+2
+2 row: *(*(a+1)+0 	     *(*(a+1)+1            *(*(a+1)+2
+3 row: *(*(a+2)+0 	     *(*(a+2)+1            *(*(a+2)+2
+
+
+
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<alloc.h>
+
+void main()
+{
+int **a,r,c,i,j;
+clrscr();
+printf("Enter no of rows and cols :");
+scanf("%d%d",&r,&c);
+
+a=(int **)malloc(r*sizeof(int *));
+
+for(i=0;i<r;i++)
+{
+*(a+i)=(int *)malloc(c*sizeof(int));
+}
+printf("Enter array elements :\n");
+for(i=0;i<r;i++)
+{
+ for(j=0;j<c;j++)
+ {
+  scanf("%d",*(a+i)+j);
+ }
+}
+ printf("Given elements:\n");
+ for(i=0;i<r;i++)
+{
+ for(j=0;j<c;j++)
+ {
+   printf("%d\t",*(*(a+i)+j));
+  }
+ printf("\n");
+}
+free(a);
+getch();
+}
+
+realloc:-                          <alloc.h>
+It realloc allocates main memory at runtime.
+
+void *realloc(void *block,size_t(size));
+
+realloc adjusts the size of the allocated block to size,copying the contents
+to a new location.
+
+ex:-
+int *a;
+a=(int *)malloc(5*sizeof(int));
+This statement allocate 5 locations.
+
+
+a=(int *)realloc(a,10*sizeof(int));
+This statement allocate 10 locations(include first 5 locations (above five
+locations as it is)  5+5.
+
+a=(int *)realloc(a,4*sizeof(int));
+allocates 4 locations(one delete first 5)
+
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<alloc.h>
+#include<string.h>
+
+void main()
+{
+char *str;
+clrscr();
+str=(char *)malloc(8);
+strcpy(str,"HELLO");
+printf("String is  :%s",str);
+str=(char *)realloc(str,25);
+strcat(str,"WELCOME TO BDPS");
+printf("\nNew string is %s",str);
+free(str);
+getch();
+}
+
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int *a,i;
+clrscr();
+a=(int *)malloc(3*sizeof(int));
+
+printf("Enter first elments :");
+
+for(i=0;i<3;i++)
+{
+scanf("%d",&a[i]);
+}
+printf("Given first elements :\n");
+
+for(i=0;i<3;i++)
+{
+printf("%5d",a[i]);
+}
+
+
+a=(int *)realloc(a,15*sizeof(int));
+printf("\nEnter second elements :\n");
+for(i=3;i<6;i++)
+{
+scanf("%d",&a[i]);
+}
+printf("Given all elements :\n");
+for(i=0;i<6;i++)
+{
+printf("%5d",a[i]);
+}
+
+free(a);
+
+getch();
+}
+
+
+PREPROCESSOR STATEMENTS(DIRECTIVES):-
+
+  The preprocessor is a programme that process are source for before
+  the process through the compiler.
+
+The commands used to control the preprocessor is known as
+preprocessor directives.These directives devided into 3 categories:-
+
+1)File inclusion directives
+2)Macro substitution directives
+3)compiler control directives
+
+1)File inclusion directives:-
+
+  #include :- It is a preprocessor file inclusion directives and used
+  to include header files.
+
+  It provides instructions to the compiler to link the function from the
+  system library.
+
+  #include "filename"
+  #include<filename>
+
+	When the file name is included within double quotations the search
+	for the file is made first the current directory and then the
+	standard directories.
+
+  Otherwise when the file is included within angular basis < > the file
+  search to only in the standard directories.
+
+
+  MACRO SUBSTITUTION DIRECTIVES:-
+
+  Macro is a process where an identifier in a programme is replaced by
+  predefined string or value.
+
+  #define
+  It is a preprocessor directive and is used to define macros
+
+  syn:-
+  #define identifier predefstring(or)value
+
+ex:-
+  #define p printf
+  #define val 100
+
+#include<stdio.h>
+#include<conio.h>
+
+#define p printf
+#define s scanf
+#define vm void main
+#define cls clrscr
+#define gt getch
+#define val 100
+
+vm()
+{
+int n;
+cls();
+p("Enter any no  :");
+s("%d",&n);
+p("Given value :%d",n);
+p("\n val =%d",val);
+gt();
+}
+
+#undef:-
+using the statement a undefined macro can be undefined.
+
+syn:-
+#undef identifier
+
+#include<stdio.h>
+#include<conio.h>
+
+#define p printf
+#define s scanf
+
+void main()
+{
+int n;
+clrscr();
+p("Enter any no  :");
+s("%d",&n);
+
+#undef p
+
+printf("Given value :%d",n);
+getch();
+}
+
+
+MACRO WITH ARGUMENT:-
+	The pre processor permits as to define more complex and more
+  useful form of replacements.
+
+  syn:-
+  #define  square(x) x*x
+
+
+MACRO EXAMPLE:-
+
+#include<stdio.h>
+#include<conio.h>
+
+#define square(x) x*x
+
+void main()
+{
+int n,s;
+clrscr();
+printf("Enter any no  :");
+scanf("%d",&n);
+s=square(n);
+printf("Square of given number :%d",s);
+getch();
+}
+DIFFERENCES BETWEEN FUNCTION AND MACRO
+
+FUNCTION				MACRO
+
+1)It is a self contain block         1)It is a pre processor statement
+  of statements
+
+2)It replaces its return value       2)It replaces its definition
+
+3)We can use only specifier          3)datatypes are generic
+  datatypes
+
+4)Execution speed is less             4)Execution speed is more
+
+5)It requires less memory             5)It requires more memory
+
+
+#include<stdio.h>
+#include<conio.h>
+
+#define square(x) x*x
+void main()
+{
+int n;
+clrscr();
+n=100/square(5);
+printf("n=%d",n);
+getch();
+}
+
+
+
+
+WRITE A PROGRAMME MAX VALUE OF GIVEN TWO NUMBERS USING MACROS.
+
+#include<stdio.h>
+#include<conio.h>
+
+#define maxval(x,y) x>y?x:y
+
+void main()
+{
+int a,b,m;
+clrscr();
+printf("Enter any two numbers:");
+scanf("%d%d",&a,&b);
+m=maxval(a,b);
+printf("Maximum value:%d",m);
+getch();
+}
+
+compiler control directives:-
+(conditional control directives)
+
+These directives are used to control the compiler
+
+#if
+#else
+#endif
+
+#include<stdio.h>
+#include<conio.h>
+
+#define n 10
+
+#if n<=10
+#define val 100
+#else
+#define val 200
+#endif
+
+void main()
+{
+clrscr();
+printf("Val =%d",val);
+getch();
+}
+
+pragma:-
+implementation_specific directives
+
+syn:-
+#pragma<directive name>
+#pragma startup<function name>[priority]
+#pragma exit<function name>[priority]
+
+	There two pragmas allow the programme to specify functions that
+  should be called their.
+
+  Upon programme start-up-before main() is called or
+
+  upon programme exit-- just before the programme terminates through exit
+
+  <function_name>:
+
+  Must be a previous by declared defined function that taken no arguments
+  and return void
+
+#include<stdio.h>
+#include<conio.h>
+
+void func1()
+{
+clrscr();
+printf("\nWelcome");
+}
+
+void func2()
+{
+printf("\nVijayawada");
+getch();
+}
+#pragma startup func1
+#pragma exit func2
+void main()
+{
+printf("\nbdps software limited");
+}
+
+priority:-
+The optional priority parameters is an integers in the range 64 to 255
+
+0 Highest priority:used by c libraries
+
+63  lowest used by c libraries
+
+64 first available user priority
+
+100 default priority
+
+255 lowest priority
+
+do not use priorities from 0 to 63 they are  used by the  c libraries.
+
+	Function with highest priorities are called first at startup and
+	last to exit.
+
+#include<stdio.h>
+#include<conio.h>
+void cls()
+{
+clrscr();
+}
+
+void func1()
+{
+printf("\nfunction 1");
+}
+
+void func2()
+{
+printf("\nfunction 2");
+}
+
+void func3()
+{
+printf("\nfunction3");
+}
+
+#pragma startup cls 64
+#pragma startup func1 65
+#pragma startup func2 66
+#pragma startup func3 67
+
+void main()
+{
+printf("\nMain function");
+getch();
+}
+
+#include<stdio.h>
+#include<conio.h>
+void cls()
+{
+clrscr();
+}
+void func1()
+{
+printf("\nfunction1");
+}
+void func2()
+{
+printf("\nfunction 2");
+}
+void func3()
+{
+printf("\nfunction3");
+}
+
+void gt()
+{
+getch();
+}
+
+#pragma startup cls
+#pragma exit func 70
+#pragma exit func2 68
+#pragma exit func3 65
+#pragma exit gt 64
+void main()
+{
+printf("\nMain function");
+}
+
+
+
+
+
+
+

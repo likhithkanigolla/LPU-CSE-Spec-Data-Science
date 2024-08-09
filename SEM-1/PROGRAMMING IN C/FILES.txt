@@ -1,0 +1,76 @@
+
+	C language permits the usage of limited input and output functions
+  to read and ride data.These functions are used for only smaller volumes
+  of data and it becomes difficult to handle longer data volumes also the
+  entire data is lost when the programme is over.
+
+  definition:-
+	a file is one which enable the user to read,ride and store a group
+  of related data.
+
+				     (or)
+	A file is a collection of related data stored in a particular area
+  on the disc.
+
+	C supports a number of functions to have the ability to perform the
+basic file operations which includes
+
+1)Name in a file
+2)Opening a file
+3)Writing data to a file
+4)Reading data to a file
+5)Closing a file
+
+-
+It is a predefined structure and is used to declared a file pointer
+using this pointer We can perform all file operations
+
+decleration of file pointer:-
+FILE *identifier;
+
+eg:- FILE *fp;
+
+fopen:-
+It opens a file stream.
+syn:- FILE *fopen(const char *filename,const char *mode);
+
+
+
+mode    Description
+
+   r    Open for reading only
+
+   w    Create for writing
+	If a file by that name already exists, it will be over written.
+
+   a    Append; open for writing at end of file, or create for
+	writing if the file does not exist.
+
+fclose:-
+   It Closes a file stream
+   Declaration:  int fclose(FILE *stream);
+
+fcloseall:-
+   It closes all open streams
+   Declaration:  int fcloseall();
+
+EOF:-
+   A constant indicating that end-of-file has been reached on a file.
+   To get this character from keyboard press ctrl z
+
+getc:-
+   It is a macro that gets one character from a file stream
+   Declaration: int getc(FILE *stream);
+
+putc:-
+   It is a macro that outputs a character to a stream
+   Declaration: int putc(int c, FILE *stream);
+
+
+fprintf:-
+It sends formatted output to a file stream
+dec:-int fprintf (FILE *stream, const char *format [, argument, ...]);
+
+fscanf:-
+It scans on the formats input from a file stream.
+dec:-int fscanf (FILE *stream,       const char *format [, address, ...]);

@@ -1,0 +1,934 @@
+
+			     LOOPING STATEMENTS
+
+	The process of repeated executing a block of statements up to
+   specified number of times is called as loop.C supports three types of
+   looping statements.
+
+   1)while loop
+   2)do while loop
+   3)for loop
+
+ Any loop as three things are
+
+	   1)Initialize the index
+	   2)test condition
+	   3)update the index
+
+while loop:-
+	It is a conditional control loop statement in 'C' language.
+
+syntax:-
+     while(test condition)
+     {
+       statements;
+      }
+
+
+	In this statement first the test condition will be evaluated,if it
+  is true then the statement block will be executed.After the execution
+  of statements the test condition once again evaluated.If it is true then
+  the statement block will be executed once again.This process of repeated
+  execution continuous untill the test condition finally becomes false.
+
+TO DISPLAY NATURAL NOS FROM 1 TO GIVEN NUMBER USING WHILE LOOP?
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,i=1;
+clrscr();
+printf("Enter any number    :");
+scanf("%d",&n);
+printf("Natural numbers from 1 to %d:\n",n);
+
+while(i<=n)
+{
+printf("%d\t",i);
+i++;
+}
+getch();
+}
+
+TO DISPLAY EVEN,ODD NUMBERS FROM 1 TO GIVEN NUMBER?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,i;
+clrscr();
+printf("Enter any number    :");
+scanf("%d",&n);
+
+printf("\nEven  numbers from 1 to %d:\n",n);
+i=1;
+while(i<=n)
+{
+if(i%2==0)
+printf("%d\t",i);
+i++;
+}
+printf("\nOdd numbers from 1 to %d:\n",n);
+i=1;
+while(i<=n)
+{
+if(i%2!=0)
+printf("%d\t",i);
+i++;
+}
+getch();
+}
+
+TO DISPLAY FACTORS OF  GIVEN NUMBER?
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,i;
+clrscr();
+printf("Enter any number    :");
+scanf("%d",&n);
+printf("Factors of %d   :",n);
+i=1;
+while(i<=n)
+{
+if(n%i==0)
+printf("%d\t",i);
+i++;
+}
+getch();
+}
+
+
+W.P.TO DISPLAY SUM OF N NATURAL  NUMBERS?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,i=1,sum=0;
+clrscr();
+printf("Enter any number    :");
+scanf("%d",&n);
+while(i<=n)
+{
+sum=sum+i;
+i++;
+}
+printf("Sum of %d",sum);
+getch();
+}
+
+W.P.TO ACCEPT ANY NUMBER TO DISPLAY NO OF DIGITS AND GIVEN NUMBER?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+unsigned long n;
+int nd=0;
+clrscr();
+printf("Enter any number    :");
+scanf("%lu",&n);
+while(n>0)
+{
+nd++;
+n=n/10;
+}
+printf("No of digits of given number   :%d",nd);
+getch();
+}
+
+
+TO ACCEPT ANY NUMBER AND DISPLAY SUM OF DIGITS IN GIVEN NUMBER?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+unsigned long n;
+int sum=0;
+clrscr();
+printf("Enter any no :");
+scanf("%lu",&n);
+while(n>0)
+{
+sum=sum+(n%10)
+n=n/10;
+}
+printf("Sum of digits :%d",sum);
+getch();
+}
+
+TO ACCEPT ANY NUMBER AND CHECK WHETHER THE GIVEN NUMBER IS PRIME OR NOT?
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,i=1,count=0;
+clrscr();
+printf("Enter any no :");
+scanf("%d",&n);
+while(i<=n)
+{
+if(n%i==0)
+count++;
+i++;
+}
+if(count==2)
+printf("Given number is prime");
+else
+printf("Given number is not prime");
+getch();
+}
+
+TO ACCEPT ANY NUMBER DISPLAY RIVERSE NUMBER OF GIVEN NUMBER?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n;
+unsigned long rev=0;
+clrscr();
+printf("Enter any no  :");
+scanf("%d",&n);
+while(n>0)
+{
+rev=rev*10+(n%10);
+n=n/10;
+}
+printf("Reverse number :%lu",rev);
+getch();
+}
+
+
+9)To display even or odd with a single loop from given number?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int i=2,n,ck=1;
+clrscr();
+printf("Enter any no  :");
+scanf("%d",&n);
+while(ck<=2)
+{
+if(i==2)
+printf("Even numbers from 1 to %d :",n);
+if(i==1)
+printf("Odd numbers from 1 to %d :",n);
+printf("%d\t",i);
+i=i+2;
+if(i>n)
+{
+i=1;
+ck++;
+}
+}
+getch();
+}
+
+10) To display final sum:-
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+unsigned long n;
+int sum=0;
+clrscr();
+printf("Enter any no :");
+scanf("%lu",&n);
+while(n>0)
+{
+sum=sum+(n%10);
+n=n/10;
+if(n==0)
+{
+if(sum>9)
+{
+printf("%d\n",sum);
+n=sum;
+sum=0;
+}
+}
+}
+printf("Sum of digits :%d",sum);
+getch();
+}
+
+11) Sum with out loop
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+unsigned long n;
+int sum=0;
+clrscr();
+printf("Enter any no :");
+scanf("%lu",&n);
+if(n%9==0)
+sum=9;
+else
+sum=n%9;
+printf("Sum of digits :%d",sum);
+getch();
+}
+
+
+12)WRITE A PROGRAMME TO ACCEPT ANY NUMBER AND SPECIFY DIGIT DISPLAY  THE
+GIVEN NUMBER?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+unsigned long n;
+int sd,dg,i=1;
+clrscr();
+printf("Enter any no :");
+scanf("%lu",&n);
+printf("Which digit do u want to display  :");
+scanf("%d",&sd);
+while(i<sd)
+{
+n=n/10;
+i++;
+}
+dg=n%10;
+printf("Specified digit :%d",dg);
+getch();
+}
+
+
+DO-WHILE LOOP:----
+
+	It is a alternative form of while loop.The only difference between
+  while and do while is the minimum number of execution of while is zero
+  and the minimum number of execution of do while is one.
+
+  syn:-
+  do
+  {
+  statements;
+  }
+  while(test condition);
+
+	First the statement block will be executed and then the text condition
+  is executed and then the text condition is evaluated.If it is true then the
+  statement block will be executed once again.This process of repeated
+  execution continuous and till the text condition becomes false.
+
+
+
+
+
+
+
+
+
+  13)WRITE A PROGRAMME TO DISPLAY NATURAL NUMBERS FROM TO GIVEN NUMBER
+     USING DO WHILE?
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,i=1;
+clrscr();
+printf("Enter any number    :");
+scanf("%d",&n);
+printf("Natural numbers from 1 to %d:",n);
+do
+{
+printf("%d\t",i);
+i++;
+}while(i<=n);
+getch();
+}
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,i=1;
+clrscr();
+printf("Enter any number    :");
+scanf("%d",&n);
+printf("Natural numbers from 1 to %d:\n",n);
+do
+{
+printf("%d\t",i);
+i++;
+}while(i<=n);
+getch();
+}
+
+for loop:-
+	It is the most commonly used loop statement in c language.It
+  consisting of three expressions.
+
+  syn:-
+  for(exp1;exp2;exp3)
+  {
+  statements;
+  }
+	The first expression is used to initialise the index,the second
+  expressionis used to check whether the loop is to be continued or not
+  (test condition),and the third expression is used to change the index for
+  further iteration.
+
+
+TO DISPLAY NATURAL NUMBERS FROM TO GIVEN NUMBER USING FOR LOOP?
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,i;
+clrscr();
+printf("Enter any number    :");
+scanf("%d",&n);
+printf("Natural numbers from 1 to %d:\n",n);
+for(i=1;i<=n;i++)
+{
+printf("%d\t",i);
+}
+getch();
+}
+
+
+WRITE A PROGRAMME TO DISPLAY MATHEMATICAL TABLE OF GIVEN NUMBER FROM 1 TO 20?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,i;
+clrscr();
+printf("Enter any number    :");
+scanf("%d",&n);
+for(i=1;i<=20;i++)
+{
+printf("\n %d    *   %d  = %d",n,i,n*i);
+}
+getch();
+}
+
+
+16)To display riverse number of the given number?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,i;
+unsigned long rev=0;
+clrscr();
+printf("Enter any number    :");
+scanf("%d",&n);
+
+   /*
+	for(;n>0;n=n/10)
+	{
+	rev=rev*10+(n%10);
+	}
+   */
+
+for(i=n;i>0;i=i/10)
+{
+rev=rev*10+(i%10);
+}
+printf("Riverse number :%lu",rev);
+getch();
+}
+
+
+17)   WRITE A PROGRAMME TO DISPLAY NATURAL NUMBERS FROM 1 TO 100 EXCEPT 40
+      50 60 USING CONTINUE?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int i=0;
+clrscr();
+while(i<100)
+{
+i++;
+if(i==40 || i==50 ||i==60)
+continue;
+printf("%d\t",i);
+}
+getch();
+}
+
+
+EVEN OR ODD USING CONTINUE:-
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,i;
+clrscr();
+printf("Enter any number    :");
+scanf("%d",&n);
+printf("\nEven  numbers from 1 to %d:",n);
+i=0;
+while(i<=n)
+{
+i++;
+if(i%2!=0)
+continue;
+printf("%d\t",i);
+}
+printf("\nOdd numbers from 1 to %d:",n);
+i=0;
+while(i<=n)
+{
+i++;
+if(i%2==0)
+continue;
+printf("%d\t",i);
+i++;
+}
+getch();
+}
+
+
+TO CHECK WHETHER THE GIVEN NUMBER IS PERFECT NUMBER OR NOR?
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,i,sum=0;
+clrscr();
+printf("Enter any number    :");
+scanf("%d",&n);
+for(i=1;i<=n/2;i++)
+{
+if(n%i==0)
+sum=sum+i;
+}
+if(n==sum)
+printf("Given number is perfect number ");
+else
+printf("Given number is not perfect number ");
+getch();
+}
+
+PALINDROME:--
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,i,rev=0;
+clrscr();
+printf("Enter any number    :");
+scanf("%d",&n);
+for(i=n;i>0;i=i/10)
+{
+rev=rev*10+(i%10);
+}
+if(rev==n)
+printf("Given number is palindrome ");
+else
+printf("Given number is not palinedrome ");
+getch();
+}
+
+WHILE PALINDROME:-
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,m;
+unsigned long rev=0;
+clrscr();
+printf("Enter any number    :");
+scanf("%d",&n);
+m=n;
+while(m>0)
+{
+rev=rev*10+(i%10);
+m=m/10;
+}
+if(rev==n)
+printf("Given number is palindrome ");
+else
+printf("Given number is not palindrome ");
+getch();
+}
+
+TO CHECK THE GIVEN NUMBER IS ARMSTRONG OR NOR?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,m,r,sum=0;
+clrscr();
+printf("Enter any number    :");
+scanf("%d",&n);
+m=n;
+while(m>0)
+{
+r=m%10;
+sum=sum+(r*r*r);
+m=m/10;
+}
+if(sum==n)
+printf("Given number is armstrong ");
+else
+printf("Given number is not armstrong ");
+getch();
+}
+
+DISPLAY G.C.D. OF GIVEN TWO NUMBERS?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a,b,s,g;
+clrscr();
+printf("Enter any two numbers    :");
+scanf("%d%d",&a,&b);
+s=a<b?a:b;
+while(s>=1)
+{
+if(a%s==0 && b%s==0)
+{
+g=s;
+break;
+}
+s--;
+}
+printf("gcd  =%d",g);
+getch();
+}
+
+CALICULATE DISPLAY LCM OF GIVEN TWO NUMBERS?
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a,b,lcm;
+clrscr();
+printf("Enter any two numbers    :");
+scanf("%d%d",&a,&b);
+lcm=a>b?a:b;
+while(1)
+{
+if(lcm%a==0 && lcm%b==0)
+break;
+lcm++;
+}
+printf("LCM =%d",lcm);
+getch();
+}
+
+NOTE:-  while(1) always true.
+
+
+TO GENERATE THE FIBONACCI SERIES OF N TERM?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,i,t,t1=0,t2=1;
+clrscr();
+printf("Enter no of terms   :");
+scanf("%d",&n);
+printf("Fibonacci series:");
+printf("%d\t%d",t1,t2);
+for(i=0;i<=n-2;i++)
+{
+t=t1+t2;
+printf("%d\t",t);
+t1=t2;
+t2=t;
+}
+getch();
+}
+
+
+TO CHECK FROM THE GIVEN NUMBER IS FIBONACCI SERIES OR NOR?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,i,t,t1=0,t2=1,ck=0;
+clrscr();
+printf("Enter any number   :");
+scanf("%d",&n);
+if(n==0)
+{
+ck=1;
+}
+else
+{
+while(1)
+{
+t=t1+t2;
+if(t==n)
+{
+ck=1;
+break;
+}
+if(t>n)
+break;
+t1=t2;
+t2=t;
+}
+}
+if(ck==0)
+printf("%d is not in fibonacci series ",n);
+else
+printf("%d is in fibonacce series",n);
+getch();
+}
+
+WRITE A PROGRAMME ACCEPT ANY DECIMAL NUMBER AND DISPLAYS THE BINARY NUMBER?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n;
+unsigned long bia=0,b=1;
+clrscr();
+printf("Enter any decimal number   :");
+scanf("%d",&n);
+while(n>0)
+{
+bia=bia+(n%2)*b;
+n=n/2;
+b=b*10;
+}
+printf("Binary number of given number :%lu",bia);
+getch();
+}
+
+
+BINARY TO DECIMAL?
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n=0,b=1,r;
+unsigned long bia;
+clrscr();
+printf("Enter any Binary number   :");
+scanf("%lu",&bia);
+while(bia>0)
+{
+r=bia%10;
+if(r!=0 && r!=1)
+{
+printf("Invalid binary number:");
+getch();
+exit(0);
+}
+n=n+b*r;
+bia=bia/10;
+b=b*2;
+}
+printf("Decimal number of given binary number :%d",n);
+getch();
+}
+
+NESTED LOOPS:-
+	Using a loop statment with in another loop is known as nested
+	loops.
+
+TO DISPLAY PRIME NUMBERS FROM 1 TO GIVEN NUMBER?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,i,j,count;
+clrscr();
+printf("Enter any  number   :");
+scanf("%d",&n);
+printf("Prime numbers from 1 to %d  :",n);
+for(i=1;i<=n;i++)
+{
+count=0;
+for(j=1;j<=i;j++)
+{
+if(i%j==0)
+count++;
+}
+if(count==2)
+printf("%d\t",i);
+}
+getch();
+}
+
+DISPLAY PRIME NUMBERS BETWEEN TWO SPECIFY NUMBERS?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n1,n2,i,j,count;
+clrscr();
+printf("Enter any two numbers   :");
+scanf("%d%d",&n1,&n2);
+printf("Prime numbers from %d to %d    :",n1,n2);
+for(i=n1;i<=n2;i++)
+{
+count=0;
+for(j=1;j<=i;j++)
+{
+if(i%j==0)
+count++;
+}
+if(count==2)
+printf("%d\t",i);
+}
+getch();
+}
+
+WRITE A PROGRAMME PALINDROME NUMBERS FROM 1 TO GIVEN NUMBER?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,t,i,rev;
+clrscr();
+printf("Enter any number    :");
+scanf("%d",&n);
+printf("Palindrome numbers from 1 to %d   :\n",n);
+for(i=1;i<=n;i++)
+{
+t=i;
+rev=0;
+while(t>0)
+{
+rev=rev*10+(t%10);
+t=t/10;
+}
+if(rev==i)
+printf("%d\t",i);
+}
+getch();
+n}
+
+
+
+WRITE A PROGRAMME TO DISPLAY PERFECT NUMBERS FROM 1 TO GIVEN NUMBERS?
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,i,j,sum;
+clrscr();
+printf("Enter any number    :");
+scanf("%d",&n);
+printf("Perfect numbers from 1 to %d   :",n);
+for(i=1;i<=n;i++)
+{
+sum=0;
+for(j=1;j<=i/2;j++)
+{
+if(i%j==0)
+sum=sum+j;
+}
+if(i==sum)
+printf("%d\t",i);
+}
+getch();
+}
+
+
+WRITE A PROGRAMME ARMSTRONG NUMBERS FROM 1 TO GIVEN NUMBER?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,m,i,r,sum;
+clrscr();
+printf("Enter any number    :");
+scanf("%d",&n);
+printf("Armstrong numbers from 1 to %d  :",n);
+for(i=1;i<=n;i++)
+{
+m=i;
+sum=0;
+while(m>0)
+{
+r=m%10;
+sum=sum+(r*r*r);
+m=m/10;
+}
+if(sum==i)
+printf("%d\t",i);
+}
+getch();
+}
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<dos.h>
+void main()
+{
+int h,m,s;
+clrscr();
+printf("Enter current time :");
+scanf("%d:%d:%d",&h,&m,&s);
+textmode(1);
+_setcursortype(0);
+while(!kbhit())
+{
+clrscr();
+textcolor(2);
+gotoxy(15,12);
+printf("%.2d:%.2d:%.2d",h,m,s);
+delay(1000);
+s++;
+if(s>59)
+{
+m++;
+s=1;
+}
+if(m>59)
+{
+h++;
+m=0;
+}
+if(h>12)
+h=1;
+}
+}
+

@@ -1,0 +1,449 @@
+	
+
+
+
+block diagram of c programme execution:-
+
+
+
+						   ÚÄÄÄÄÄÄÄÄÄÄÄ¿
+						   ³c libraries³
+						   ÀÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄ¿                                              ³ linking
+³  'c'  ³       ÚÄÄÄÄÄÄÄÄ¿        ÚÄÄÄÄÄÄÄÄ¿        ÚÄÄÄÄÄÄÄÄ¿
+³source ³ÄÄÄÄÄÄ>³compiler³ÄÄÄÄÄÄ> ³object  ³ÄÄÄÄÄÄ> ³linker  ³ÄÄÄÄÄÄ¿
+³prgrame³       ³        ³        ³file    ³        ³        ³      ³
+³   .c  ³       ÀÄÄÄÄÄÄÄÄÙ        ³ .obj   ³        ÀÄÄÄÄÄÄÄÄÙ      ³
+ÀÄÄÄÄÄÄÄÙ                         ÀÄÄÄÄÄÄÄÄÙ                        ³
+								    ³
+								    ³
+								    ³
+	  ÚÄÄÄÄÄÄÄÄ¿    ÚÄÄÄÄÄÄÄÄ¿   ÚÄÄÄÄÄÄÄÄ¿   ÚÄÄÄÄÄÄÄÄÄÄ¿	    ³
+	  ³primary ³    ³loading ³   ³execute ³   ³executable³	    ³
+output <ÄÄ³memory  ³<ÄÄ ³        ³<ÄÄ³ start  ³<ÄÄ³file  .exe³<ÄÄÄÄÄÙ
+	  ³ (ram)  ³    ÀÄÄÄÄÄÄÄÄÙ   ÀÄÄÄÄÄÄÄÄÙ   ÀÄÄÄÄÄÄÄÄÄÄÙ					     ÀÄÄÄÄÄÄÄÄÙ
+	  ÀÄÄÄÄÄÄÄÄÙ
+	      ³processing
+	ÚÄÄÄÄÄÄÄÄÄÄÄ¿
+	³processor  ³
+	ÀÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+
+
+
+
+
+
+
+
+
+	Once the coding the programme is load into the computer using
+	a compiler to produce equalant machine language code(exe).
+	In c compilization two parts are there namely
+
+	1)Compiler
+	2)Linker
+
+		The compiler receives 'C' source file as its input and
+	converts into object file after that the linker receives object file
+	as its input and linking with 'C' libraries and produces executable
+	file after compilation 'C' source code constants the programme
+	execution and loads the information about the programme using the
+	loading process.After loading the information in computers memory
+	the processor process the information and gives the output.
+
+		   BASIC STRUCTURE OF C LANGUAGE
+
+			 [document section]
+
+		       pre processor section
+				(or)
+			   Link section
+
+		     [Global declaration section]
+
+		       main()
+		      {
+
+		     [Local declaration  section]
+
+			     statements;
+
+
+		     }
+
+		      [sub-programming section]
+
+		      [user defined functions]
+
+
+  1)DOCUMENT SECTION:- It consists a set of convert lines giving the name
+	of the programme, author name,and some of the details.
+
+  2)LINK SECTION:- It provides instructions to the compiler to link the
+       functions from the system library.
+
+ 3)GLOBAL DECLARATION SECTION:-The variables that are used in more than
+       one function are known as global variables and these variables are
+       declared and the gloabal decleration section.
+
+4)MAIN FUNCTION SECTION:-
+	Every 'C' programme must have one main function.This section consists
+  two parts namely LOCAL DECLARATION SECTION AND STATEMENT PART.The local
+  declaration section declares  the variables using in statements.The
+  statement part consists all the executable statement.These two parts must
+  appear between the opening and closing curling brasis  {  }.
+	The programme execution begin set the opening brasis and end set
+  closing brasis.
+
+5)SUB PROGRAMME SECTION:-
+	This section consists all the user define function.
+
+
+
+
+
+COMMENTS:-
+
+	Un executable lines in programmer called comments.These lines are
+   skipped by the compiler.
+
+
+	Single line        //
+
+	Multiple lines    :-
+
+		     /*--------------
+		       --------------
+		       --------------*/
+
+
+
+
+
+
+
+
+#include:-
+
+	It is a pre processor file inclusion directive and is used to include
+   header files.
+
+	It provides instructions to the compiler to link the functions from
+   the system library.
+
+			#include "file name"
+			      (or)
+			#include<file name>
+
+     When the file name is included within the " " (double quotations)
+     search for the first present current working directory  and
+     then the standard  directories.
+
+    The file name is included with in angular basis < > the file is
+   search in the standard directories.
+
+
+ printf:-
+	It is a function which is used to print data on the screen.
+
+	int printf("Control string" [arg-1,arg-2,......arg-n]);
+			      (or)
+			  format strig.
+
+      The printf statement is used to print messages the value container the
+      variable on the screen.
+
+      eg:-
+	 printf("welcome to c programming");
+
+
+
+    1)Switch on computer and load os(operating system)
+    2)Open c editor (double click on c icon   or start->Run->
+				   c:\tc\bin\tc.exe
+
+    3)After open editor then set path
+			  Options->directories-> 1 row->c:\tc\include
+						 2 row->c:\tc\lib
+
+    4)File select new(it opens a new empty file)
+    5)Type c programme.
+    6)Save (file->select save and give the filename( .c extension)
+    7)compile ---->select compile
+    8)Run   ------>select run
+    9)Output------>(window--->select user screen)
+
+
+
+			    SHORT CUT KEYS
+
+	SAVE                 -------->      F2
+	COMPILE              -------->alt   F9
+	RUN                  -------->ctrl  F9
+	OUTPUT               -------->alt   F5(user screen)
+	FULLSCREEN           -------->      F5
+	CLOSE FILE           -------->alt   F3
+	CLOSE EDITOR         -------->alt   X
+	OPEN FILES           -------->      F3
+
+
+	WINDOW MAXIMIZE    ---------->  alt +  enter
+
+
+
+
+
+
+
+
+
+OPEN C WITH DOS SHELL:-
+      Run--->command--->cd\      enter
+		       >cd tc    enter
+		       >cd bin   enter
+		       >tc       enter
+
+
+ZOOM--------->ALT ENTER
+
+OUTPUT HANG ------------->ctrl break
+
+DIRECTORY CREATION WITH DOS SHELL:-
+  >md name
+  >cd name
+  >exit
+
+
+clrscr:-             <conio.h>
+It clears text mode window
+decleration:- void clrscr();
+
+getch:
+gets a character from console but does not echo to the screen.
+decleration:-  int getch();
+
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+clrscr();
+printf("Welcome to c programming");
+getch();
+}
+
+
+ESCAPE SEQUENCE CHARACTERS:-
+
+OUTPUT:-
+
+
+BDPS SOFTWARE LIMITED VIJAYAWADA
+
+\n     new line                                 BDPS SOFTWARE LIMITED
+						VIJAYAWADA
+
+\t    horizontal tab space       BDPS SOFTWARE LIMITED       VIJAYAWADA
+
+\v    vertical tab space         bdps software limited
+						      vijayawada
+				 (not working in turbo c++)
+
+\b    backspace                  bdps software limitevijayawada
+
+\r    carriage return            vijayawadare limited
+
+\a    alert                      :-beep sound
+
+				C TOKENS
+	The smallest individual units or elements in a programme are called
+   Tokens.C has five types of tokens
+
+   1)IDENTIFIERS
+   2)KEYWORDS
+   3)OPERATORS
+   4)CONSTANTS
+   5)SPECIAL CHARACTERS
+
+1)IDENTIFIERS:-
+	Identifier can be defined as name of the variable,functions,array
+  and some other programmes elements using the combination of the following
+  characters.
+
+	    alphabetsÄÄÄÄÄÄ>A to Z
+			    a to z
+
+	    digits  ÄÄÄÄÄÄ>0 to 9
+
+	    undersscoreÄÄÄÄÄÄ> _
+
+	    The first character an identifier will be an alphabet or
+  underscore followed by alphabets or digits or underscore.
+
+2)KEYWORDS:-
+  Keywords are the words whose may has already been expired the compiler.
+  that words at the time of designing language some words are requested
+  to do specific tasks such words called as keywords.
+
+  c has 32 keywords they are
+
+  auto		break		case		char		const
+  continue	default		do		double		else
+  enum		extern		float	       {far}          for
+  goto		if		int		long		register
+  return	short		signed		sizeof		static
+  struct	switch		typedef		union		unsigned
+  void		while      (volatile)
+
+3)OPERATORS:-
+  It is the symbol of which performs particular operation.'C' operators
+  can be classified to  a number of categories namely
+
+  1)Arithmatic operators
+  2)Relational operators
+  3)Logical operators
+  4)bitwise operators
+
+4)CONSTANTS:-
+	Constants refered to fixed values that do not change during the
+  execution of programme.C supports the following constants.
+
+  1)Integer constants
+  2)char constants
+  3)real constants
+  4)string constants
+
+5)SPECIAL CHARACTERS:-
+  All characters other than alphabets digits and underscore are treated
+  as special characters.
+
+
+
+			C DATA TYPES
+
+	The kind of data that variables may hold in a programming language
+  is called as data types.In c language the data type can be classified into
+  three categories namely
+
+   1)PRIMARY DATATYPES
+   2)DERIVED DATATYPES
+   3)USER DEFINED DATATYPES
+
+1)PRIMARY DATA TYPES:-
+	All c compilers supports fundamental datatypes namely:
+
+int, char,float,double
+int:-
+	It is a positive,negative and whole values but not a decimal
+	number.
+
+	ex:-  111,876,-111,-987,0 etc.....,
+
+ char:-
+	A single character can be defined between single quotations is a
+	character.
+
+	ex:-  'a'   'A'   etc......,
+string:-
+	It is also a character data type a group of characters define
+   between double quotation makes a string.
+
+	ex:-  "welcome"    "abc786" etc...,
+
+float:-
+	The numbers which has float in the form of floating point
+    representation is known as float value.
+
+    ex:- 8.567   987.654  -123.456  etc....,
+
+double:-
+	The numbers which has stored double crisition representation is
+  known as double data type.
+
+  ex:- 45333.789    6789.678     -5432.789 etc...,
+
+2)DERIVED DATA TYPES :-
+	The derived datatypes built from the basis integers ,characters and
+  floating point data types.
+
+  ex:-arrays,pointers,structures,union,etc...,
+
+3)USER DEFINED DATA TYPES:-
+	The user defined data types unable a programme to invent in own
+  data types and defined what values can taken thus this data types can
+  help a programmer to reducing then programming errors.There are two types
+  are user defined data types namely:-
+
+  1)typedef(type definition)
+  2)enum(enumerated data type)
+
+
+ classification of primary datatypes:-
+------------------------------------------------------------------------
+ Type            format      Length               Range
+		 specifier
+-------------------------------------------------------------------------
+
+ unsigned char      %c       1 byte               0 to 255
+ char               %c       1 byte               -128 to 127
+ unsigned int       %u       2 bytes                  0 to 65,535
+ int                %d       2 bytes            -32,768 to 32,767
+ unsigned long      %lu      4 bytes                  0 to 4,294,967,295
+ float              %f       4 bytes     3.4 * (10**-38) to 3.4 * (10**+38)
+ double             %lf      8 bytes   1.7 * (10**-308) to 1.7 * (10**+308)
+ long double        %Lf     10 bytes   3.4 * (10**-4932) to 1.1 * (10**+4932)
+--------------------------------------------------------------------------
+ note:-  char[] string %s
+
+ hexa decimal number    %x
+ octal number          %o
+
+
+
+
+			  TYPE MODIFIERS
+
+QUALIFIERS:-
+	signed unsigned short long
+
+	A type modifier alerts the meaning of the base datatype to yield
+  a new type.Each these type modifiers can be applied to the base type int.
+
+	The modifiers signed and unsigned can also be applied to the base type
+  char.In addition,long can be applied double.
+
+VARIABLE:-
+	A quantity which may value during the execution of a programme is
+  known as variable.
+
+DECLERATION:-
+	datatype identifier;
+		(or)
+	datatype identifier-1,identifier-2,.....,identifier-n;
+
+	eg:-
+	int n;
+	char ch;
+
+
+INITIALISATION:-
+
+	At the time of declaring the variable we can provide some data into
+   the variable is known as variable initialisation.
+
+   datatype identifier=value;
+
+   eg:-
+   int n=100;
+   int x=100,y=20,z=90;
+   int a=100,b,c,d=900,e;
+   char ch='h';
+   float ft=123.456;
+   double db=5678.5678;
+
+
+
+

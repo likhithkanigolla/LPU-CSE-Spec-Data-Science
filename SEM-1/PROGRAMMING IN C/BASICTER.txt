@@ -1,0 +1,427 @@
+
+
+			   BASIC TERMINOLOGY
+
+COMPUTER:-
+	It is a electronic device.It has memory and it performs arithmatic
+	and logical operations.
+INPUT:-
+	The data entering to the computer is known as input.
+
+OUTPUT:-
+	The result and information by the computer is known as "output".
+
+PROGRAMME:-
+	Programme is a sequence of instructions to solve the given problem.
+
+SOFTWARE:-
+	A group of programmes to operate and controls operations of the
+	computer.
+
+HARDWARE:-
+
+	All the physical components or units connected to the computer
+	circuit is known as "HARDWARE".
+
+
+
+OPERATING SYSTEM:-
+	It is an interphase between user and computer in otherwords O.S.
+	is the complex set of the programme which manages the resources of
+	the computer resources include input,output,processor etc.,
+
+
+
+
+
+LANGUAGES:-
+	It consists a set of executable instructions.
+
+PACKAGES:-
+	It is design by any other languages with limited resources.
+
+
+
+
+
+
+
+
+
+
+	 VARIOUS STEPS INVOLVED IN PROGRAMME DEVELOPMENT:-
+
+	 The following steps are involved in programme development:-
+
+	1:PROBLEM DEFINITION.
+	2:ANALYSIS AND DESIGN.
+	3:ALGORITHM.
+	4:FLOWCHART.
+	5:CODING AND IMPLEMENTATION.
+	6:DEBUGING AND TESTING.
+	7:DOCUMENTATION.
+1:PROBLEM DEFINITION:-
+
+	Problem definition phase is it clear understanding of exactly what
+	is needed for creating a workable solution .We must know exactly
+	what be you want do before the began do it.Define the problem means
+	understanding problem.It involves three specifications regarding
+	a problem solution.
+
+	a)Input specifications
+	b)Output specifications
+	c)Processing
+
+2:ANALYSIS AND DESIGN:-
+	Before going to make a final solutions for the problem, the problem
+	must be analised out line solution is prepare simple problems.,
+	but incase of complex problems the main problem is devided into
+	subproblems canbe handled and can be solved independently.The task
+	is too large it always better into analysis the task such that it
+	canbe devided into number of modules and seek solution for
+	each module.
+3:ALGORITHM:-
+	Once the problem is devided into number of modules the logic is
+	expressed step by step.A step by step procedure to solve the
+	given problem is known as algorithm.An algorithm is define as the
+	final of step which accomplish a particular task.An algorithm can
+	be describe in natural languages such as english.
+4:FLOW CHART:-
+	After the complish the algorithm, the programme flow can be visualised
+	by drawing the flow chart for the algorithm.A flow chart is nothing
+	but a graphical art symbolic representation of how instructing
+	will be executed one after the other.
+
+5:CODING AND IMPLEMENTATION:-
+      Coding is process of converting algorithmic solution or flow
+      chart into a computer programme.In this process each and every step of
+      an algorithm will be converted into instructing of selected computer
+      programming language.
+
+    Before selecting a programming language we must follow the
+    following three considerations:-
+		1:Nature of the problem.
+		2:Programming language.
+		3:Limitations of the computer.
+
+6:DEBUGGING AND TESTING:-
+	Before loading the problem into the computer we must locate and
+	correct all the errors.The process of correcting errors in a
+	programme is known as debugging. These are three types 	of errors
+	that generally accure in a programme namely.
+
+	1:Syntax errors.
+	2:Runtime errors.
+	3:Logical errors.
+
+
+
+
+
+	It is very important to test the programme written to achieve a
+	specific task testing involves running the programme with known
+	data of which are known,the results are known the results produces
+	by the computer canbe very find.
+
+7:DOCUMENTATION:-
+
+	Documentation is most important aspect the processing.It is a
+	continuous process to keep the copy of all phases involved in problem
+	definition,debugging and testing and the parts of documentation.
+	This space involves to producing a written document for
+	the users.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				"ALGORITHMS"
+
+	      A step by step procedure to solve the given problem is known
+	      as algorithm.
+   1)To find the addition subtraction and multiplication of given two numbers?
+
+   Step 1:start
+   step 2:Read A and B
+   Step 3:sum A+B
+   Step 4:sub A-B
+   Step 5:mul A*B
+   Step 6:print sum sub and mul
+   Step 7:End
+
+   2)To find the Maximum value of given two numbers?
+
+   Step 1:start
+   Step 2:Read A and B
+   Step 3:Max A
+   Step 4:If max<B then max=B
+   Step 5:Print max
+   Step 6:End
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   3)To find the Maximum value of given three numbers?
+
+   Step 1:Read A,B and C
+   Step 2:Max=A
+   Step 3:If max<B then max=B
+   Step 4:If max<C then max=C
+   Step 5:Print max
+   Step 6:End
+
+     4)To Check given number is even or odd?
+
+   Step 1:Read n
+   Step 2:if n%2==0 then print "n is even
+	   else print"n is odd"
+   Step 3:End
+
+
+   4)To print natural numbers from 1 to given number?
+   Step 1:start
+   Step 1:Read n
+   Step 2:i=1
+   step 3:print i
+   step 4:i=i+1
+   step 5:if i<=n then goto step 3
+   step 5:End
+
+   5)Display factors of given number ?
+
+   Step 1:Read n
+   step 2:i=1
+   Step 3:if n%i=0 then print i
+   step 4:i=i+1
+   step 5:if i<=n then goto step3
+   step 6:End
+
+   6)To print even numbers from 1 to given number?
+
+   Step 1:Read n
+   step 2:i=1
+   Step 3:if i%2=0 then print i
+   step 4:i=i+1
+   step 5:if i<=n then goto step3
+   step 6:End
+
+   8)To check whether the given number is Prime or not?
+
+   Step 1:Read n
+   step 2:i=1,count=0
+   Step 3:if n%i=0 then count=count+1
+   step 4:i=i+1
+   step 5:if i<=n then go to step 3
+   step 6:if count=2 then print "n is prime"
+	  else print "n is not prime"
+   step 7:End
+
+   9)Display sum of n natural numbers?
+
+   Step 1:Read n
+   step 2:i=1,sum=0
+   step 3:sum=sum+i
+   Step 4:i=i+1
+   step 5:if i<n then goto step3
+   step 6:print sum
+   step 7:End
+
+   10)Display reverse number of a given number?
+
+   Step 1:Read n
+   step 2:rev=0
+   Step 3:rev=rev*10=(n%10)
+   step 4:n=n/10
+   step 5:if n>0 then goto step3
+   step 6:print rev
+   step 7:End
+
+   11)Display Factorial of given number?
+
+   Step 1:Read n
+   step 2:fact=1
+   Step 3:fact=fact*n
+   step 4:n=n-1
+   step 5:if n>=1 then goto step3
+   step 6:print fact
+   step 7:End
+
+   12)Display number of digits of the given number?
+
+   Step 1:Read n   
+   step 2:nd=0
+   step 3:nd=nd+1
+   step 4: n=n/10  
+   step 5: if n>0 then go to step 3  
+   step 6 :print nd
+   step 7:End
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  5*4*3*2*1=120
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   13)Display the sum of digits of the given number?
+
+   Step 1:Read n
+   step 2:sum=0;
+   Step 3:sum=sum+(n%10)
+   step 4:n=n/10
+   step 5:if n>0 then goto step3
+   step 6:print sum
+   step 7:End
+
+
+		       "FLOW CHARTS"
+
+
+ASCII CHARACTER SET:-
+AMERICAN STANDARD CODE FOR INFORMATION AND INTERCHANGE:-
+
+	These are 256 distinct characters used by the micro computers.These
+	values range from 0-255.
+	These can be grouped as under:-
+
+	CAPITAL ALPHABETS    ÄÄÄÄÄÄÄÄÄÄÄ> 26
+	SMALL ALPHABETS      ÄÄÄÄÄÄÄÄÄÄÄ> 26
+	DIGITS               ÄÄÄÄÄÄÄÄÄÄÄ> 10
+	SPECIAL SYMBOLS      ÄÄÄÄÄÄÄÄÄÄÄ> 32
+	CONTROL CHARACTERS   ÄÄÄÄÄÄÄÄÄÄÄ> 34
+	GRAPHICS CHARACTERS  ÄÄÄÄÄÄÄÄÄÄÄ>128
+
+	Out of the 256 characters set,the first 128(0-127) are called
+	ASCII Characters and next 128(128-255) characters are called
+	extended ASCII character set.Each ASCII character has unique
+	appearence.
+
+	A to  Z          =   65-90
+	a to  z          =   97-122
+	0 to  9          =   48-57
+
+	enter        ÄÄÄÄÄÄÄÄÄÄÄ> 13
+	space        ÄÄÄÄÄÄÄÄÄÄÄ> 32
+	backspace    ÄÄÄÄÄÄÄÄÄÄÄ>  8
+	tab          ÄÄÄÄÄÄÄÄÄÄÄ>  9
+	esc          ÄÄÄÄÄÄÄÄÄÄÄ> 27
+
+
+
+
+
+
+
+
+
+
+CLASSIFICATION OF PROGRAMMING LANGUAGE:--
+
+	Programming language can be classified two types namely
+
+	1)low level language
+	2)high level language
+
+1)Low level language:-
+
+	A low level language is called assembled language.It design in the
+  begginning it has some simple instructions.These instructions are not
+  binary codes.But the computer can understand only the machine language.
+  Hence a convertor or translator is developed to translate the low level
+  language.This translator is called "ASSEMBLOR".
+
+2)High level language:-
+
+	These are more english language and hence the programmer found then
+  very easily to learn to convert the programmes in high level language
+  to machine language compilers and interpreters are used.
+
+
+
+
+
+  TRANSLATORS:-
+
+	There are three types are translators available for the languages
+	namely
+
+1)assmembelor
+2)compiler
+3)interpretor
+
+1)ASSEMBELOR:-
+	This translator  is used convert the programmes written in the low
+  level languages(assembly) in to machine languages.
+
+2)COMPILER:-
+
+	Compilers are used to convert high level languages into machine
+  languages.It checks for errors in the entire programme and converts
+  the programme into machine languages.
+
+3)INTERPRETOR:-
+
+	It is also used to  convert high level languages into machine language.
+  It checks for errors statement by statement and converts the statement
+  into machine language.
+

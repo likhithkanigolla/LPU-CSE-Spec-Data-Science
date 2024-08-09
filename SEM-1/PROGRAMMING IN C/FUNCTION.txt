@@ -1,0 +1,1091 @@
+				FUNCTIONS
+
+	It is a self contain block of statments and it performs a particular
+  task.It can be used it several times in a programme for define only
+  ones.
+
+  LIBRARY(PREDEFINE) FUNCTIONS:-
+
+	The functions which are inbuilt with the compiler are called as
+  library functions.
+
+  ex:- printf,scanf,clrscr,getch
+
+
+  USER DEFINED FUNCTIONS:-
+
+	User can define functions to do task relevant to their programmes
+  such function are called as userdefined functions.
+
+	Any function as(predefined,userdefined) three things they are
+
+	1)function decleration
+	2)function definition
+	3)function calling
+
+	Incase of predefined functions the function decleration is in header
+  files,the definition is in c libraries.But calling is in your source
+  programme.But in case of user define functions all the three things
+  are in your source programme.
+
+decleration:-
+    returntype func_name([arg list] );
+
+definition:-
+    returntype func_name([arg list])
+    {
+     body;
+    }
+
+calling:-
+   func_name([parameter list]);
+
+	The arguments which are given at the time of function decleration
+  or definition are known as formal arguments.The arguments which are at
+  the time of given as function calling are known as actual arguments
+  or parameters.
+
+
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+void func();
+clrscr();
+func();
+getch();
+}
+
+void func()
+{
+printf("\nWelcome to c functions");
+}
+
+
+RULES FOR CREATING AND ACCESSING USER DEFINE FUNCTIONS:-
+-------------------------------------------------------
+1)Function can be called by any number of times.
+
+2)A function may or may not return a value.
+
+3)If function does not return any value the function return datatype
+  will be specified void
+
+4)If a function returns a value only one value can be returned.
+
+5)The returning value must be returned by statement "return".
+
+6)The function returns a integer value by default (we can not specify
+  any return datatype integer)
+
+7)If a function returns a value ,the execution of return
+
+8)If a function returns a value,the returning value should match with
+  a function return datatype.
+
+9)A function may or may not receive arguments
+
+10)A function is executed when a function is called by its name.
+
+11)Before a function calling function decleration or definition is
+   mustren should
+
+12)A function definition may be placed before or after the main function.
+
+13)If a function decleration is specified before the function called
+   function definition is the specified any where in the programme.
+
+14)If a function is defined before the function called ,then the
+    function decleration is not necessary.
+
+15)The function definition should not be terminated with ;(semicolon)
+
+
+
+
+
+
+
+
+return(keyword):-
+
+Exists immediately from the currently executing function to the
+calling routine,optionals,returning a value.
+
+syn:-
+     return[<expression>];
+		|
+	      optional
+CATEGORY OF FUNCTIONS OR FUNCTION PROTOTYPES:-
+
+	A function depending on whether arguments present or not and whether
+  a value is written or not belong to the one of the following categories:-
+      1. FUNCTION WITH NO ARGUMENTS AND NO RETURN VALUE
+      2. FUNCTION WITH  ARGUMENTS AND NO RETURN VALUE
+      3. FUNCTION WITH  ARGUMENTS AND  RETURN VALUE
+      4. FUNCTION WITH NO ARGUMENTS AND  RETURN VALUE
+
+CATEGORY 1:- FUNCTION WITH NO ARGUMENTS AND NO RETURN VALUE:-
+In this type the function has no arguments it does not receive
+any data from the calling function.Similarly it does not return any value the calling function does not receive any data from the called function. So, there is no data communication between calling function and called function.
+=============================================
+
+
+
+
+
+
+ #include<stdio.h>
+#include<conio.h>
+void main()
+{
+ void sum();
+ clrscr();
+ sum();
+ getch();
+}
+void sum()
+{
+int a,b;
+printf("Enter any two values:");
+scanf("%d%d",&a,&b);
+printf("Sum is  %d",a+b);
+}
+
+CATEGORY 2:- FUNCTION WITH  ARGUMENTS AND NO RETURN VALUE:-
+
+	In this type the function has some arguments it receives
+ data from the calling function.But it  does not return any value,
+ does not receive any data in the called function.So, there is one way
+ data communication between calling function and called function.
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+void sum(int,int);
+int a,b;
+clrscr();
+printf("Enter any two values:");
+scanf("%d%d",&a,&b);
+sum(a,b);
+getch();
+}
+void sum(int x,int y)
+{
+ printf("Sum is  %d",x+y);
+}
+
+CATEGORY 3:- FUNCTION WITH  ARGUMENTS AND  RETURN VALUE:-
+
+	In this type the function has some arguments it receives
+ data from the calling function.similarly  it  returns a value,the calling
+ function receives data from the called function. So, there is two way
+ data communication between calling function and called function.
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int sum(int,int);
+int a,b,s;
+clrscr();
+printf("Enter any two values:");
+scanf("%d%d",&a,&b);
+s=sum(a,b);
+
+printf("Sum is  %d",s);
+
+getch();
+}
+int sum(int x,int y)
+{
+return x+y;
+}
+
+
+
+
+
+
+
+CATEGORY 4:- FUNCTION WITH  NO ARGUMENTS AND  WITH RETURN VALUE:-
+	In this type the function has no arguments and it does not receives
+any  data from the calling function.But it returns a value,the calling
+function receives data from the called function. So, there is one way
+data communication between calling function and called function.
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int sum();
+int s;
+ clrscr();
+s=sum();
+printf("Sum is  %d",s);
+getch();
+}
+int sum()
+{
+int a,b;
+printf("Enter any two values:");
+scanf("%d%d",&a,&b);
+return a+b;
+}
+
+
+
+
+
+
+
+
+
+
+WRITE A PROGRAMME TO DISPLAY NATURAL NUMBERS FROM 1 TO GIVEN NUMBER USING
+USER DEFINED FUNCTIONS?
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+void disp(int);
+int n;
+clrscr();
+printf("Enter any  number:");
+scanf("%d",&n);
+disp(n);
+getch();
+}
+void disp(int x)
+{
+int i;
+for(i=1;i<=x;i++)
+{
+printf("%d\t",i);
+}
+}
+
+TO DISPLAY FACTORS OF GIVEN NUMBER?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+void factors(int);
+int n;
+clrscr();
+printf("Factors of given number:");
+scanf("%d",&n);
+factors(n);
+getch();
+}
+void factors(int x)
+{
+int i;
+for(i=1;i<=x;i++)
+{
+if(x%i==0)
+printf("%d\t",i);
+}
+}
+
+TO FIND THE MAXIMUM VALUE OF GIVEN TWO NUMBERS USING USER DEFINED FUNCTIONS?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int maxval(int,int);
+int a,b,m;
+clrscr();
+printf("Enter any two values");
+scanf("%d%d",&a,&b);
+m=maxval(a,b);
+printf("Maximum value =%d",m);
+getch();
+}
+
+int maxval(int x,int y)
+{
+if(x>y)
+return x;
+else
+return y;
+}
+
+
+TO FIND THE MAXIMUM VALUE OF GIVEN THREE NUMBERS USING USER DEFINED
+FUNCTIONS?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int maxval(int,int);
+int a,b,c,m;
+clrscr();
+printf("Enter any three values");
+scanf("%d%d%d",&a,&b,&c);
+m=maxval(a,b);
+m=maxval(m,c);
+	  // m=maxval(maxval(a,b),c);
+printf("Maximum value =%d",m);
+getch();
+}
+int maxval(int x,int y)
+{
+if(x>y)
+return x;
+else
+return y;
+}
+
+TO DISPLAY RIVERSE NUMBER FROM THE GIVEN NUMBER USING USER DEFINED
+FUNCTIONS?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+unsigned long revnum(int);
+int n;
+unsigned long r;
+clrscr();
+printf("Enter any  number:");
+scanf("%d",&n);
+r=revnum(n);
+printf("Riverse number of given number:%lu",r);
+getch();
+}
+
+unsigned long revnum(int x)
+{
+unsigned long rev=0;
+while(x>0)
+{
+rev=rev*10+(x%10);
+x=x/10;
+}
+return rev;
+}
+
+
+FACTORIAL NUMBERS FROM THE GIVEN NUMBER?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+unsigned long fact(int);
+int n;
+unsigned long f;
+clrscr();
+printf("Enter any  number:");
+scanf("%d",&n);
+f=fact(n);
+printf("Factorial of given number %lu", f);
+getch();
+}
+unsigned long fact(int x)
+{
+unsigned long f=1;
+while(x>=1)
+{
+f=f*x;
+x--;
+}
+return f;
+}
+
+TO ENTER n r values:-
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+unsigned long fact(int);
+int n,r,ncr;
+clrscr();
+printf("Enter n and r values:");
+scanf("%d%d",&n,&r);
+ncr=fact(n)/(fact(r)*fact(n-r))f=fact(n);
+printf("ncr    :%d",ncr);
+getch();
+}
+unsigned long fact(int x)
+{
+unsigned long f=1;
+while(x>=1)
+{
+f=f*x;
+x--;
+}
+return f;
+}
+
+WRITE A PROGRAMME TO DISPLAY PASCAL TRIANGLE OF N ROWS?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+unsigned long fact(int);
+int i,j,ncr,s,n;
+clrscr();
+printf("Enter the value of n:");
+scanf("%d",&n);
+s=n*3;
+for(i=0;i<n;i++)
+{
+printf("%*c",s,32);
+for(j=0;j<i;j++)
+{
+ncr=fact(i)/(fact(j)*fact(i-j));
+printf("%6d",ncr);
+}
+printf("\n");
+s=s-3;
+}
+getch();
+}
+unsigned long fact(int x)
+{
+unsigned long f=1;
+while(x>=1)
+{
+f=f*x;
+x--;
+}
+return f;
+}
+
+
+LCM:-
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int lcm(int,int);
+int a,b,l;
+clrscr();
+printf("Enter any  two number:");
+scanf("%d%d",&a,&b);
+l=lcm(a,b);
+printf("Lcm of two numbers %d",l);
+getch();
+}
+int lcm(int x,int y)
+{
+int l;
+l=x>y?x:y;
+while(1)
+{
+if(l%x==0 && l%y==0)
+break;
+l++;
+}
+return l;
+}
+
+
+GCD:-
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int gcd(int,int);
+int a,b,g;
+clrscr();
+printf("Enter any two numbers    :");
+scanf("%d%d",&a,&b);
+g=gcd(a,b);
+printf("Gcd   =%d",g);
+getch();
+}
+int gcd(int x,int y)
+{
+int s,g;
+s=x<y?x:y;
+while(s>=1)
+{
+if(x%s==0 && y%s==0)
+{
+g=s;
+break;
+}
+s--;
+}
+return g;
+}
+
+
+TO DISPLAY SUM OF DIGITS IN THE GIVEN NUMBER USING USER DEFINED FUNCTIONS
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int dgsum(unsigned long);
+unsigned long n;
+int sum;
+clrscr();
+printf("Enter any number:");
+scanf("%lu",&n);
+sum=dgsum(n);
+printf("Sum of digits of given number :%d",sum);
+getch();
+}
+int dgsum(unsigned long x)
+{
+int sum=0;
+while(x>0)
+{
+sum=sum+(x%10);
+x=x/10;
+if(x==0)
+{
+if(sum>9)
+{
+x=sum;
+sum=0;
+}
+}
+}
+return sum;
+}
+
+
+
+FIBONACCI SERIES USING USER DEFINED FUNCTIONS:-
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+void fibo(int);
+int n;
+int sum;
+clrscr();
+printf("Enter no of terms:");
+scanf("%d",&n);
+printf("Fibonaccis series :");
+fibo(n);
+getch();
+}
+void fibo(int x)
+{
+int i,t,t1=0,t2=1;
+printf("%d\t%d",t1,t2);
+for(i=0;i<=x-2;i++)
+{
+t=t1+t2;
+printf("\t%d",t);
+t1=t2;
+t2=t;
+}
+}
+ #include<stdio.h>
+#include<conio.h>
+void main()
+{
+void fibo(int);
+int n;
+clrscr();
+printf("Enter no of terms  :");
+scanf("%d",&n);
+printf("Fibonacci series of %d terms:\n",n);
+fibo(n);
+getch();
+}
+
+void fibo(int x)
+{
+int i,t,t1=0,t2=1;
+printf("%d\t%d",t1,t2);
+for(i=1;i<=x-2;i++)
+{
+  t=t1+t2;
+  printf("\t%d",t);
+  t1=t2;
+  t2=t;
+  }
+}
+
+			      STORAGE CLASSES
+
+	By the decleration statement the memory is allocated temperarly  for
+  all the variables.The size of memory various with respect to the type
+  of variable.The availability of the variables for access depends on its
+  decleration type.
+
+	The storage class specifiers are used to specify the life and
+  scope of the variables with in blocks, functions and the entire programme.
+
+	  C supports 4 types of storage classes.They are
+
+  1)Automatic variables
+  2)Static variables
+  3)External variables (or)
+    Global variables
+  4)Register variables
+
+  1)AUTOMATIC VARIABLES:-There variable are inside a function block.
+
+  storage:- Main memory
+
+  Default value:- Initial value (garbage value )
+
+  scope:-Local to the block in which it is defined.
+
+  life:- Till the control remains with in the block in which it is defined.
+
+  keyword:-auto
+
+  Note:- If there is no storage class specifier before the decleration
+      of any variables inside a function block by default it takes auto
+      storage class.
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+auto int a,b;
+clrscr();
+printf("\na=%d",a);
+printf("\nb=%d",b);
+getch();
+}
+
+2)STATIC VARIABLES:-The memory of static variables remains unchanged untill
+  end of the programme..
+
+  storage:- Main memory
+
+  Default value:- 0
+
+  scope:-Local to the block in which it is defined.
+
+  life:- The value of static variables persists it between the
+  different function call that means it can not re-initialize the
+  the difference between calls.
+
+  keyword:-static
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+static int a,b;
+clrscr();
+printf("a=%d",a);
+printf("\nb=%d",b);
+getch();
+}
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+void disp();
+int i;
+clrscr();
+for(i=1;i<=10;i++)
+{
+disp();
+}
+getch();
+}
+void disp()
+{
+static int n=1;
+printf("%d\t",n);
+n++;
+}
+
+GLOBAL VARIABLES OR EXTERN VARIABLES:-
+	The variables that are both alive and active note the entire
+  programme are known as external variables.
+
+  storage:- Main memory
+  default:- 0
+  scope:- global
+  life:- As long as the programmes execution does not come to end.
+  keyword :-  extern
+
+#include<stdio.h>
+#include<conio.h>
+
+int a,b;
+void main()
+{
+clrscr();
+printf("a=%d",a);
+printf("\nb=%d",b);
+getch();
+}
+
+#include<stdio.h>
+#include<conio.h>
+int a;
+void main()
+{
+extern int a;
+clrscr();
+printf("\na=%d",a);
+getch();
+}
+int a=100;
+
+
+REGISTER VARIABLES:- We can use register variables for frequently used
+variables to improve the faster execution of the programme.
+
+storage:- CPU register
+default value :- gabrage values
+scope:- local to the block in which it is define
+life:- Till the control remains with in the block in which it is define.
+keyword:- register
+
+note:- It is variable and declare inside function block only
+       2)It supports only integral(int,char) datatype
+
+       #include<stdio.h>
+       #include<conio.h>
+       void main()
+       {
+       register int a,b;
+       clrscr();
+       printf("a=%d",a);
+       printf("\nb=%d",b);
+       getch();
+       }
+
+
+
+
+			RECURSIVE FUNCTION
+			     (OR)
+			RECURSIVE METHOD
+			     (OR)
+			RECURSION FUNCTION
+
+	Calling a function with in the same function definition is knwon as
+  recursive function.If you want work with recursive function we must
+  follow the following two aspects:-
+
+  1)Calling by itself
+  2)Termination condition
+
+TO DISPLAY NATURAL NOS FROM 1 TO GIVEN NUMBER USING RECURSIVE METHOD?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+void disp(int);
+int n;
+clrscr();
+printf("Enter any  number:");
+scanf("%d",&n);
+disp(n);
+getch();
+}
+void disp(int x)
+{
+if(x>1)
+disp(x-1);
+printf("%d\t",x);
+}
+
+FIBONACCI SERIES:-
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+void fibo(int);
+int n;
+int sum;
+clrscr();
+printf("Enter no of terms:");
+scanf("%d",&n);
+printf("Fibonaccis series :");
+fibo(n);
+getch();
+}
+void fibo(int x)
+{
+static int t,t1,t2=1;
+if(t==0)
+{
+printf("%d\t%d",t1,t2);
+x=x-2;
+}
+t=t1+t2;
+printf("\t%d",t);
+x--;
+if(x>=1)
+{
+t1=t2;
+t2=t;
+fibo(x);
+}
+}
+
+NATURAL NOS USING RECURSIVE FUNCTION:-
+
+include<stdio.h>
+#include<conio.h>
+void main()
+{
+static int n,i=1;
+if(i==1)
+{
+clrscr();
+printf("Enter any value :");
+scanf("%d",&n);
+printf("Natural numbers from 1 to %d",n);
+}
+printf("%d\t",i);
+i++;
+if(i<=n)
+main();
+getch();
+exit(0);
+}
+
+RIVERSE NUMBER USING RECURSIVE FUNCTION:-
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+unsigned long revnum(int);
+int n;
+unsigned long r;
+clrscr();
+printf("Enter any  number:");
+scanf("%d",&n);
+r=revnum(n);
+printf("Riverse number of given number:%lu",r);
+getch();
+}
+unsigned long revnum(int x)
+{
+static unsigned long rev=0;
+rev=rev*10+(x%10);
+x=x/10;
+if(x>0)
+revnum(x);
+return rev;
+}
+
+FACTORIAL OF GIVEN NUMBER USING USER DEFINED FUNCTIONS:-
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+unsigned long fact(int);
+int n;
+unsigned long f;
+clrscr();
+printf("Enter any  number:");
+scanf("%d",&n);
+f=fact(n);
+printf("Factorial of given number :%lu",f);
+getch();
+}
+unsigned long fact(int x)
+{
+if(x<=1)
+return 1;
+else
+return x*fact(x-1);
+}
+
+
+MATHEMATICAL FUNCTIONS:-                <math.h>
+
+sqrt:-
+It caliculates square root
+decleration:-double sqrt(double x);
+
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+void main()
+{
+int n;
+double s;
+clrscr();
+printf("Enter any number:");
+scanf("%d",&n);
+s=sqrt(n);
+printf("Square root given number :%.3lf",s);
+getch();
+}
+
+pow:-
+It caliculates and display exponential value of given base and power
+decleration:-  double pow(double x,double y);
+
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+void main()
+{
+int b,p;
+double e;
+clrscr();
+printf("Enter base and power:");
+scanf("%d%d",&b,&p);
+e=pow(b,p);
+printf("Exponential value of %d and %d is  :%.3lf",b,p,e);
+getch();
+}
+
+abs:- a macro gets the absolute value of an integer.
+decleration:-  int abs(int x);
+
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+void main()
+{
+int n,a;
+clrscr();
+printf("Enter any value :");
+scanf("%d",&n);
+a=abs(n);
+printf("Absolute value of Given value  :%d",a);
+getch();
+}
+
+floor:-
+    It rounds down the given value
+    decleration:-   double floor(double x)
+ceil:-
+    It rounds up the given value
+decleration:-   double ceil(double x)
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+void main()
+{
+double x,c,f;
+clrscr();
+printf("Enter any double value :");
+scanf("%lf",&x);
+c=ceil(x);
+f=floor(x);
+printf(" ceil value :%.2lf",c);
+printf("\n floor value :%.2lf",f);
+getch();
+}
+
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+void main()
+{
+int a,b,c,d,max,min;
+clrscr();
+printf("Enter any  two values:");
+scanf("%d%d",&a,&b);
+c=a+b;
+d=abs(a-b);
+max=(c+d)/2;
+min=(c-d)/2;
+printf("Maximum value :%d",max);
+printf("Minimum vlaue :%d",min);
+getch();
+}
+
+WRITE A PROGRAMME TO CALICULATE DISPLAY AREA OF TRIANGLE WITH THE GIVEN
+THREE SIDES:-
+
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+#include<process.h>
+void main()
+{
+float a,b,c,s,area;
+clrscr();
+printf("Enter three sides of triangle:");
+scanf("%f%f%f",&a,&b,&c);
+if((a+b)<=c ||(b+c)<=a||(c+a)<=b)
+{
+printf("unable to form triangle");
+getch();
+exit(0);
+}
+s=(a=b+c)/2;
+area=sqrt(s*(s-a)*(s-b)*(s-c));
+printf("Area %.3lf sq units",area);
+getch();
+}
+
+
+WRITE A PROGRAMME TO ENTER PRINCIPLE AMOUNT,TIME AND RATE OF INTEREST
+CALICULATE AND DISPLAY TOTAL AMOUNT WITH COMPOUND INTEREST?
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+void main()
+{
+int m,y,n;
+float pr,ta,r;
+clrscr();
+printf("Enter principle amount:");
+scanf("%f",&pr);
+printf("Enter rate of interest:");
+scanf("%f",&r);
+printf("Enter time(year & months):");
+scanf("%d%d",&y,&m);
+n=y*12+m;
+ta=pr*pow(1+r/100,n);
+printf("Total amount with compound statement :%.2f",ta);
+getch();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

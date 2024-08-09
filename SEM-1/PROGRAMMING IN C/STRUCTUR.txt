@@ -1,0 +1,1051 @@
+				  STRUCTURES
+
+Definition:-
+	 A collection of data items of different data types stores in a  single element with continuous memory location is known as structure.
+
+struct:-
+	  It is  a keyword and it is used to define a structure.
+
+DECLERATION:-
+
+    FORM 1:-
+
+	     struct struct_name
+	     {
+	      data item----1;
+	      data item----2;
+	      --------------
+	      --------------
+	      data item-----n;
+	      };
+
+ Ex:-
+	     struct emp
+	     {
+	     int eno;
+	     char ename[10];
+	     float sal;
+	     };
+
+
+ DECLARATION OF STRUCTURE VARIABLE :-
+
+ struct structure_name identifier;
+
+ ex:-    struct emp e;
+
+ ACCESS OPERATOR .   :-
+
+       It is used to access the data items of the structure with the help
+       of structure variable.
+
+       struct_variable.decleration;
+
+ eg:-  e.eno;
+       e.ename;
+       e.sal;
+
+form-2:-
+
+Decleration of struct and structure variable in a single statement:-
+
+struct struct_name
+{
+data item-1;
+data item-2;
+------------
+------------
+data item-n;
+}variable list;
+
+ex:-
+struct emp
+{
+int eno;
+char ename[20];
+float sal;
+}e;
+e.eno;
+e.ename;
+e.sal;
+
+
+
+INITIALISATION:-
+
+FORM-1
+
+struct structure_name
+{
+data item-1;
+data item-2;
+----------
+-----------
+data item-n;
+};
+struct structure_name identifier={var-1,var-2,------var n};
+--------------------------------------------------------------------------
+ex:
+struct emp
+{
+int eno;
+char ename[20];
+float sal;
+};
+struct emp e={100,"kumar",9000.00};
+
+FORM -2
+
+struct structure name
+{
+data item-1;
+data itme-2;
+-----------
+-----------
+data item-n;
+}identifier={val-1,val-2,------val-n};
+-------------------------------------------------------------------
+Ex:-
+
+struct emp
+{
+int eno;
+char ename[20];
+float sal;
+}e={100,"kumar",9000.00};
+
+
+WRITE A PROGRAMME TO ACCEPT A STRUCTURE  AND  DISPLAY ITS INITIAL
+DATA?
+
+#include<stdio.h>
+#include<conio.h>
+struct emp
+{
+int eno;
+char ename[20];
+float sal;
+};
+void main()
+{
+struct emp e={100,"kumar",9000.00};
+clrscr();
+printf("\n Employee number   :%d",e.eno);
+printf("\n Employee name      :%s",e.ename);
+printf("\n Employee salary    :%.2f",e.sal);
+
+getch();
+}
+
+
+WRITE A PROGRAMME TO ACCEPT A STRUCTURE, FROM KEYBOARD AND DISPLAY GIVEN
+DATA?
+
+
+#include<stdio.h>
+#include<conio.h>
+struct emp
+{
+int eno;
+char ename[20];
+float sal;
+}e;
+void main()
+{
+
+clrscr();
+printf("Enter employee no  :");
+scanf("%d",&e.eno);
+printf("Enter employee name  :");
+fflush(stdin);
+gets(e.ename);
+printf("Enter Salary  :");
+scanf("%f",&e.sal);
+printf("\n Employee number   :%d",e.eno);
+printf("\n Employee name      :%s",e.ename);
+printf("\n Employee salary    :%.2f",e.sal);
+getch();
+}
+
+
+WRITE A PROGRAMME TO CALICULATE AND DISPLAY STUDENT RESULT USING STRUCTURES?
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+
+struct student
+{
+int sno,c,cpp,unix,tot;
+char sname[20],res[10],div[10];
+float avg;
+};
+
+void main()
+{
+struct student s;
+clrscr();
+printf("Enter student no  :");
+scanf("%d",&s.sno);
+printf("Enter student name  :");
+fflush(stdin);
+gets(s.sname);
+printf("Enter Marks in c,cpp and unix  :");
+scanf("%d%d%d",&s.c,&s.cpp,&s.unix);
+
+
+s.tot=s.c+s.cpp+s.unix;
+s.avg=(float)s.tot/3;
+
+if(s.c>=50 && s.cpp>=50 && s.unix>=50)
+{
+strcpy(s.res,"PASS");
+if(s.avg>=60)
+strcpy(s.div,"FIRST");
+else
+strcpy(s.div,"SECOND");
+}
+else
+{
+strcpy(s.res,"FAIL");
+strcpy(s.div,"NO_DIVISION");
+}
+clrscr();
+printf("\n\nStudent no      :%d",s.sno);
+printf("\n Student name            :%s",s.sname);
+printf("\n Marks is c       :%d",s.c);
+printf("\n Marks is cpp     :%d",s.cpp);
+printf("\n Marks is unix    :%d",s.unix);
+printf("\n Total marks      :%d",s.tot);
+printf("\n Average          :%.2f",s.avg);
+printf("\n Result           :%s",s.res);
+printf("\n Division         :%s",s.div);
+getch();
+}
+
+
+ARRAY OF STRUCTURES:-
+	Like any other data type structure arrays can be defined so that
+  each array element can be of structure datatype.
+
+  for example
+  struct student s[100] defines an arrays called s,that contains of 100
+  elements.Each element is defined to be the type
+
+  s[0],s[1],s[2],---------------s[99]
+
+#include<stdio.h>
+#include<conio.h>
+
+struct item
+{
+int ino;
+char iname[20];
+float cost;
+};
+void main()
+{
+struct item it[20];
+int n,i;
+float *f,f1;
+
+f=&f1;
+*f=f1;
+
+clrscr();
+printf("Enter No of items:");
+scanf("%d",&n);
+
+for(i=0;i<n;i++)
+{
+printf("Enter %d item data \n",i+1);
+printf("Enter item number :");
+scanf("%d",&it[i].ino);
+printf("Enter item  name  :");
+fflush(stdin);
+gets(it[i].iname);
+printf("Enter Cost     :");
+scanf("%f",&it[i].cost);
+}
+clrscr();
+ printf("%-15s%-15s%s","ITEMNO","INAME","COST");
+ printf("\n---------------------------------------");
+
+ for(i=0;i<n;i++)
+ {
+ printf("\n%-15d%-15s%.2f",it[i].ino,it[i].iname,it[i].cost);
+ }
+getch();
+}
+
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+
+struct student
+{
+int sno,c,cpp,unix,tot;
+char sname[20],res[10],div[10];
+float avg;
+};
+void main()
+{
+struct student s[100];
+char ch;
+int id=0,i;
+clrscr();
+do
+{
+printf("Enter student number  :");
+scanf("%d",&s[id].sno);
+printf("Enter student name  :");
+fflush(stdin);
+gets(s[id].sname);
+printf("Enter Marks in c,cpp and unix  :");
+scanf("%d%d%d",&s[id].c,&s[id].cpp,&s[id].unix);
+s[id].tot=s[id].c+s[id].cpp+s[id].unix;
+s[id].avg=(float)s[id].tot/3;
+if(s[id].c>=50 && s[id].cpp>=50 && s[id].unix>=50)
+{
+strcpy(s[id].res,"PASS");
+if(s[id].avg>=60)
+strcpy(s[id].div,"FIRST");
+else
+strcpy(s[id].div,"SECOND");
+}
+else
+{
+strcpy(s[id].res,"FAIL");
+strcpy(s[id].div,"NO_DIV");
+}
+id++;
+printf("\nEnter another record (y/n)   :");
+fflush(stdin);
+scanf("%c",&ch);
+}while(ch!='n' && id<100);
+clrscr();
+
+printf("\n%-10s%-12s%-8s%-8s%-8s%-10s%-10s%-8s%s","SNO","SNAME","C","CPP",
+				 "UNIX","TOTAL","AVG","RES","DIV");
+printf("\n -------------------------------------------------------------");
+
+for(i=0;i<id;i++)
+{
+printf("\n%-10d%-12s%-8d%-8d%-8d%-10d%-10.2f%-8s%-10s",s[i].sno,s[i].sname,s[i].c,s[i].cpp,s[i].unix,s[i].tot,s[i].avg,s[i].res,s[i].div);
+}
+getch();
+}
+
+
+PASSING STRUCTURE AS FUNCTION ARGUMENT(PARAMETER):-
+
+	Like any other data type a structure may be used as function
+  argument
+
+RETURNING STRUCTURE:-
+
+       A function cannot only receive a structure as a argument but aslo
+  can return them.
+
+
+#include<stdio.h>
+#include<conio.h>
+struct emp
+{
+int eno;
+char ename[20];
+float sal;
+};
+struct emp accept()
+{
+struct emp se;
+printf("Enter employee number  :");
+scanf("%d",&se.eno);
+printf("Enter Employee name  :");
+fflush(stdin);
+gets(se.ename);
+printf("Enter Salary   :");
+scanf("%f",&se.sal);
+return se;
+}
+void display(struct emp se)
+{
+printf("\n Employee number :%d",se.eno);
+printf("\n Employee name     :%s",se.ename);
+printf("\n Salary    :%.2f",se.sal);
+}
+void main()
+{
+struct emp e;
+clrscr();
+e=accept();
+display(e);
+getch();
+}
+
+
+
+
+
+POINTERS AND STRUCTURES :-
+
+      A pointer can also point to structure .
+
+Ex:-
+     struct student
+     {
+     int sno;
+     char sname[20],course[10];
+     float fee;
+     };
+
+     struct student s;
+
+
+     struct student *p;
+
+	   Here p is defined to be a pointer pointing to student structure.
+     We can write p=&s.
+
+	   After making such assignment we can access every data item of
+     student structure indirectly through p as follows:-
+
+     (*p).sno;
+     (*p).sname;
+     (*p).course;
+     (*p).fee;
+			     (or)
+
+				  s.sno;
+				  s.sname;
+				  s.course;
+				  s.fee;
+
+
+
+	Here instead of writing "." and "*" we can use the structure pointer
+   operator  ->  which is -(minus) followed by the greater than sign ">".
+
+       This means we can access every data item of student structure directly
+       through p as follows:-
+
+
+
+			p->sno;
+			p->sname;
+			p->course;
+			p->fee;
+
+
+#include<stdio.h>
+#include<conio.h>
+struct student
+{
+int sno;
+char sname[20],course[10];
+float fee;
+};
+void main()
+{
+struct student s,*p;
+float *f,f1;
+f=&f1;
+*f=f1;
+clrscr();
+p=&s;
+
+/*
+printf("Enter student number  :");
+scanf("%d",&(*p).sno);
+printf("Enter student name  :");
+fflush(stdin);
+gets((*p).sname);
+printf("Enter Course  :");
+gets((*p).course);
+printf("Enter Fee  :");
+scanf("%f",&(*p).fee);
+printf("\n\nStudent number      :%d",(*p).sno);
+printf("\n Student name :%s",(*p).sname);
+printf("\n Course:%s",(*p).course);
+printf("\n Fee   :%.2f",(*p).fee);
+
+
+*/
+//efficient way
+
+
+printf("Enter sno  :");
+scanf("%d",&p->sno);
+printf("Enter sname  :");
+fflush(stdin);
+gets(p->sname);
+printf("Enter Course  :");
+gets(p->course);
+printf("Enter Fee  :");
+scanf("%f",&p->fee);
+printf("\n\nStudent number      :%d",p->sno);
+printf("\n Student name :%s",p->sname);
+printf("\n Course:%s",p->course);
+printf("\n Fee   :%.2f",p->fee);
+getch();
+}
+
+
+DYNAMIC MEMORY ALLOCATION IN STRUCTURE:-
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<alloc.h>
+struct emp
+{
+int eno;
+char ename[20];
+float sal;
+};
+void main()
+{
+struct emp  e,*p;
+float *f,f1;
+f=&f1;
+*f=f1;
+p=(struct emp *)malloc(sizeof(struct emp));
+clrscr();
+p=&e;
+printf("Enter employee number  :");
+scanf("%d",&p->eno);
+printf("Enter Employee name  :");
+fflush(stdin);
+gets(p->ename);
+printf("Enter Salary  :");
+scanf("%f",&p->sal);
+printf("\n Employee number       :%d",p->eno);
+printf("\n Employee name     :%s",p->ename);
+printf("\n Salary   :%.2f",p->sal);
+getch();
+}
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<alloc.h>
+struct student
+{
+int sno;
+char sname[20],course[10];
+float fee;
+};
+void main()
+{
+struct student s,*p;
+float *f,f1;
+f=&f1;
+*f=f1;
+p=(struct student *)malloc(sizeof(struct student));
+clrscr();
+p=&s;
+printf("Enter student number  :");
+scanf("%d",&p->sno);
+printf("Enter student name  :");
+fflush(stdin);
+gets(p->sname);
+printf("Enter Course  :");
+gets(p->course);
+printf("Enter Fee  :");
+scanf("%f",&p->fee);
+printf("\n Sno      :%d",p->sno);
+printf("\n Sname :%s",p->sname);
+printf("\n Course:%s",p->course);
+printf("\n Fee   :%.2f",p->fee);
+getch();
+}
+
+
+GROUP OF RECORDS:-
+
+Write programme to read and display students records using dynamic memory
+allocation & structures?
+
+#include<stdio.h>
+#include<conio.h>
+#include<alloc.h>
+struct student
+{
+int sno;
+char sname[20],course[10];
+float fee;
+};
+void main()
+{
+struct student *p;
+int n,i;
+float *f,f1;
+f=&f1;
+*f=f1;
+clrscr();
+printf("Enter no of records :");
+scanf("%d",&n);
+
+p=(struct student *)malloc(sizeof(struct student));
+
+for(i=0;i<n;i++)
+{
+printf("Enter Record  %d",i+1);
+
+printf("\nEnter sno  :");
+scanf("%d",&(p+i)->sno);
+printf("Enter sname  :");
+fflush(stdin);
+gets((p+i)->sname);
+printf("Enter Course  :");
+gets((p+i)->course);
+printf("Enter Fee  :");
+scanf("%f",&(p+i)->fee);
+}
+clrscr();
+printf("%-10s%-15s%-15s%s","SNO","SNAME","COURSE","FEE");
+printf("\n ---------------------------------------------");
+for(i=0;i<n;i++)
+{
+printf("\n%-10d%-15s%-15s%.2f",(p+i)->sno,(p+i)->sname,(p+i)->course,(p+i)->fee);
+}
+free(p);
+getch();
+}
+
+
+
+STRUCTURE WITHIN STRUCTURES:-
+	 OR
+NESTED STRUCTURES:-
+
+FORM-1:-
+
+	Declaring a structure with in another structure is called structure
+  with in structures.
+
+
+  struct student                           ACCESSING DATA ITEMS
+  {
+  int sno,c,cpp,unix;                     s.sno;
+   char sname[20];                         s.c;
+					 s.cpp;
+					  s.unix;
+					 s.sname;
+ struct result
+  {
+  int tot;                                s.r.tot;
+  char res[20],div[10];                   s.r.res;
+  float avg;                              s.r.div;
+  }r;                                     s.r.avg;
+}s;
+
+
+
+
+form -2;
+
+Declaring a structre variable with in another structure is called as
+structure with in structures.
+
+struct student                           ACCESSING DATA ITEMS
+  {
+  int sno,c,cpp,unix;                     r.s.sno;
+  char sname[20];                         r.s.c;
+					  r.s.cpp;
+  };                                      r.s.unix;
+                                          r.s.sname;
+
+ struct result
+  {
+  struct student s;
+  int tot;                               r.tot;
+  char res[20],div[10];                  r.res;
+  float avg;                             r.div;
+  }r;                                    r.avg;
+
+
+
+
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+struct student
+{
+int sno,c,cpp,unix;
+char sname[20];
+
+
+struct result
+{
+int tot;
+char res[10],div[10];
+float avg;
+}r;
+
+}s;
+
+void main()
+{
+clrscr();
+printf("Enter Student No :");
+scanf("%d",&s.sno);
+
+
+printf("Enter Student name    :");
+fflush(stdin);
+gets(s.sname);
+
+printf("Enter c,cpp and unix:");
+scanf("%d%d%d",&s.c,&s.cpp,&s.unix);
+
+s.r.tot=s.c+s.cpp+s.unix;
+s.r.avg=(float)s.r.tot/3;
+
+if(s.c>=50 && s.cpp>=50 && s.unix>=50)
+{
+strcpy(s.r.res,"PASS");
+if(s.r.avg>=60)
+strcpy(s.r.div,"FIRST");
+else
+strcpy(s.r.div,"SECOND");
+}
+else
+{
+strcpy(s.r.res,"FAIL");
+strcpy(s.r.div,"NO_DIVISION");
+}
+
+clrscr();
+printf("\nStudent no        :%d",s.sno);
+printf("\nStudent name      :%s",s.sname);
+printf("\nMarks is c        :%d",s.c);
+printf("\n Marks is cpp     :%d",s.cpp);
+printf("\n Marks is unix    :%d",s.unix);
+printf("\n Total marks      :%d",s.r.tot);
+printf("\n Average          :%.2f",s.r.avg);
+printf("\n Result           :%s",s.r.res);
+printf("\n Division         :%s",s.r.div);
+getch();
+}
+
+
+
+
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+struct student
+{
+int sno,c,cpp,unix;
+char sname[20];
+};
+
+
+struct result
+{
+struct student s;
+int tot;
+char res[10],div[10];
+float avg;
+}r;
+
+
+void main()
+{
+clrscr();
+printf("Enter Student No :");
+scanf("%d",&r.s.sno);
+
+
+printf("Enter Student name    :");
+fflush(stdin);
+gets(r.s.sname);
+
+printf("Enter c,cpp and unix:");
+scanf("%d%d%d",&r.s.c,&r.s.cpp,&r.s.unix);
+
+r.tot=r.s.c+r.s.cpp+r.s.unix;
+r.avg=(float)r.tot/3;
+
+
+if(r.s.c>=50 && r.s.cpp>=50 && r.s.unix>=50)
+{
+strcpy(r.res,"PASS");
+if(r.avg>=60)
+strcpy(r.div,"FIRST");
+else
+strcpy(r.div,"SECOND");
+}
+else
+{
+strcpy(r.res,"FAIL");
+strcpy(r.div,"NO_DIVISION");
+}
+clrscr();
+
+printf("\n\nStudent no      :%d",r.s.sno);
+printf("\n Sname            :%s",r.s.sname);
+printf("\n Marks is c       :%d",r.s.c);
+printf("\n Marks is cpp     :%d",r.s.cpp);
+printf("\n Marks is unix    :%d",r.s.unix);
+printf("\n Total marks      :%d",r.tot);
+printf("\n Average          :%.2f",r.avg);
+printf("\n Result           :%s",r.res);
+printf("\n Division         :%s",r.div);
+getch();
+}
+
+
+
+
+
+
+			UNIONS
+
+	A union is similar to a struct,except it allows to define varibables
+  that share storage space.
+
+  union union_name
+  {
+  data item-1;
+  data item-2;
+  -----------
+  -----------
+  data item-n;
+  }{var_list};
+
+  #include<stdio.h>
+  #include<conio.h>
+  struct test
+  {
+  int n;
+  char ch;
+  float ft;
+  }t;
+
+  union test1
+  {
+  int n;
+  char ch;
+  float ft;
+  }t1;
+
+  void main()
+  {
+  clrscr();
+  printf("size of struct %d bytes ",sizeof(t));
+  printf("\nsize of union  %d bytes ",sizeof(t1));
+  getch();
+  }
+
+DIFFERENCE BETWEEN STRUCTURE AND UNION:-
+
+  STRUCTURE                                      UNION
+
+  1)A group of data items that            1)It is also same as struct but
+    belongs to different data               the difference is memory
+    types.                                  allocation
+
+  2)It allocates memory of all            2)It allocates memory of biggest
+    declared data items in it.              data item in it
+
+  3)It can access all items at            3)It can access only one item at
+    a time.                                 a time
+
+  4)Each and every item as its            4)All items are shared common
+    own storage space                       storage space
+
+
+
+
+#include<stdio.h>
+#include<conio.h>
+
+union emp
+{
+int eno;
+char ename[20];
+float sal;
+}e;
+
+void main()
+{
+clrscr();
+printf("Enter eno  :");
+scanf("%d",&e.eno);
+
+printf("\n Emp  no        :%d",e.eno);
+
+printf("\nEnter ename  :");
+fflush(stdin);
+gets(e.ename);
+
+printf("\n Emp name      :%s",e.ename);
+
+printf("\nEnter Salary  :");
+scanf("%f",&e.sal);
+printf("\n Emp salary    :%.2f",e.sal);
+getch();
+}
+
+
+
+
+
+  #include<stdio.h>
+  #include<conio.h>
+  union emp
+  {
+  int eno;
+  char ename[10];
+  float sal;
+  }e;
+  void main()
+  {
+  clrscr();
+  printf("Enter eno : ");
+  scanf("%d",&e.eno);
+  printf("Eno   :%d",e.eno);
+  printf("\nEnter Employ name: ");
+  fflush(stdin);
+  gets(e.ename);
+  printf("Ename :%s",e.ename);
+  printf("\nEnter salary : ");
+  scanf("%f",&e.sal);
+  printf("Salary  :%.2f",e.sal);
+  getch();
+  }
+
+			ENUM
+
+	It is a user define data type and is used to defined a set of
+  constants of type int.
+  syn:-
+  enum[<type_tag>]{constant_name>[=<value>----}[var_list]];
+				      |             |
+				    optional        optional
+	The enum keyword automatically enumerators list of constant names
+  by assigning values 0,1,2...
+
+  note:-<value> must be an integer if <value >is missing it is assumed
+  to be <prev>+1
+
+  where <prev> is the value of the previous integer constant in the list.
+
+  #include<stdio.h>
+  #include<conio.h>
+  enum{a,b,c,d,e};
+  void main()
+  {
+  clrscr();
+  printf("a=%d",a);
+  printf("\n b=%d",b);
+  printf("\n c=%d",c);
+  printf("\n d=%d",d);
+  printf("\n e=%d",e);
+  getch();
+  }
+
+  #include<stdio.h>
+  #include<conio.h>
+
+  enum boolean{false,true};
+  enum boolean iseven(int x)
+
+  {
+  if(x%2==0)
+  return true;
+  else
+  return false;
+  }
+    void main()
+  {
+  int n;
+  enum boolean b;
+  clrscr();
+  printf("Enter any number:");
+  scanf("%d",&n);
+  b=iseven(n);
+
+  if(b==true)
+  printf("Given number is even");
+  else
+  printf("Given number is odd");
+  getch();
+  }
+
+typedef:- If assigns the symbol nam<identifier>to the data type definition
+<type definition>
+
+syn:-
+typedef<type definition><identifier>
+
+#include<stdio.h>
+#include<conio.h>
+
+typedef unsigned long ul;
+
+void main()
+{
+ul n;
+clrscr();
+printf("Enter any no:");
+scanf("%lu",&n);
+printf("Given number :%lu",n);
+getch();
+}
+
+
+
+
+
+
+
+
+
+
+  #include<stdio.h>
+  #include<conio.h>
+  struct emp
+  {
+  int eno;
+  char ename[20];
+  float sal;
+  };
+  typedef struct emp se;
+  se accept()
+  {
+  se e;
+  printf("Enter eno:");
+  scanf("%d",&e.eno);
+  printf("Enter ename:");
+  fflush(stdin);
+  gets(e.ename);
+  printf("Enter salary:");
+  scanf("%f",&e.sal);
+  return e;
+  }
+  void display(se e)
+  {
+  printf("\n Eno :%d",e.eno);
+  printf("\n Ename:%s",e.ename);
+  printf("\n Esal :%.2f",e.sal);
+  }
+  void main()
+  {
+  se e;
+  clrscr();
+  e=accept();
+  display(e);
+  getch();
+  }
+
+

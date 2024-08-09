@@ -1,0 +1,1343 @@
+		   CONTROL STATEMENTS
+			  OR
+		    CONTROL STRUCTURES
+
+C is considered as a structured programming language one of the
+  reason for this is having various programme control statement.C process
+  the decision making capabilities and support the statements known  as
+  control statements. There are three types of control statements supported
+  by C.
+
+  1)CONDITIONAL CONTROL STATEMENTS
+  2)UN-CONDITIONAL CONTROL STATEMENTS
+  3)LOOP CONTROL STATEMENTS
+
+  1)CONDITIONAL CONTROL STATEMENTS:-
+
+	C supports five types conditional control statements.There are
+
+	1)simple if statement
+	2)if else statement
+	3)nested if statement
+	4)else if ladder statement
+	5)switch statement
+
+
+	1)simple if statement:-It is a decesion making statement and used
+  to control the flow of execution.
+
+  syn:- if(expr)
+	{
+	statements;
+	}
+
+	If the expression is true that the statement is executed and the
+  control transfer the next statement otherwise expression is false then
+  the control directly go to the next statement.
+
+
+			    -----flow chart-------
+
+
+
+WRITE A PROGRAMME TO FIND THE MAXIMUM VALUE OF GIVEN TWO NUMBERS USING
+SIMPLE IF STATEMENTS?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+
+{
+int a,b,max;
+clrscr();
+printf("Enter any two values:");
+scanf("%d%d",&a,&b);
+if(a>b)
+max=a;
+if(b>a)
+max=b;
+printf("Maximum value :%d",max);
+getch();
+}
+
+NOTE:-If any control statement the statement block contains only a single
+statement curling basis({}) is not necessary.
+
+WRITE A PROGRAMME TO FIND THE MAXIMUM VALUE OF GIVEN THREE NUMBERS USING
+SIMPLE IF STATEMENTS.
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a,b,max;
+clrscr();
+printf("Enter any two values:");
+scanf("%d%d",&a,&b);
+if(a>b)
+max=a;
+if(b>a)
+max=b;
+printf("Maximum value :%d",max);
+getch();
+}
+
+WRITE A PROGRAMME TO ENTER CURRENT DATE AND DATE OF BIRTH CALICULATE AND
+DISPLAY AGE?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int cd,cm,cy,bd,bm,by,d,m,y;
+clrscr();
+printf("Enter current date (dd-mm-yyyyu):");
+scanf("%d-%d-%d",&cd,&cm,&cy);
+printf("Enter date of birth(dd-mm-yyyyu):");
+scanf("%d-%d-%d",&bd,&bm,&by);
+d=cd-bd;
+m=cm-bm;
+y=cy-by;
+if(d<0)
+{
+d=d+30;
+m=m-1;
+}
+if(m<0)
+{
+m=m+12;
+y=y-1;
+}
+printf("Age is %d years %d months %d days :",y,m,d);
+getch();
+}
+
+
+if else STATEMENT:-
+	It is an extension of simple if statement.
+   syn:-
+
+   if(expr)
+   {
+   statements-1;
+   }
+    else
+   {
+   statements-2;
+   }
+	  If the expression is true then if block statements are executed
+  and else block statement are ignore.Ohterwise expression is false then
+  else block statement are executed and if block statement are ignore.
+
+
+
+		     -------flowchart-------
+
+WRITE A PROGRAMME TO FIND THE MAXIMUM VALUE OF GIVEN TWO VALUES USING
+IF ELSE STATEMENT?
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a,b,max;
+clrscr();
+printf("Enter any two values:");
+scanf("%d%d",&a,&b);
+if(a>b)
+max=a;
+else
+max=b;
+printf("Maximum value :%d",max);
+getch();
+}
+
+WRITE A PROGRAMME TO CHECK WHETHER THE GIVEN NO IS EVEN OR ODD?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n;
+clrscr();
+printf("Enter any number:");
+scanf("%d",&n);
+if(n%2==0)
+printf("Given number is even");
+else
+printf("Given number is odd");
+getch();
+}
+
+NESTED IF:-
+	Using if statement with in another if is known as nested if.
+
+	If a series of decessions are involved used nested if statement.
+form 1:
+	syn:-
+
+	if(expr-1)
+	{
+	  if(expr-2)
+	  {
+	 ----------
+	 ----------
+	 if(expr-n)
+	{
+	statement;
+	}
+      }
+    }
+
+
+
+		       "flowchart"
+
+
+form -2;
+
+syn:-
+if(expr-1)
+{
+   if(expr-2)
+   {
+    statment-1;
+   }
+  else
+  {
+   statement-2;
+  }
+}
+
+
+else
+{
+  if(expr -3)
+  {
+   statment-3;
+   }
+   else
+   {
+     statement -4;
+    }
+}
+
+
+
+
+
+
+
+
+
+			 -----flowchart---------
+
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+int a,b,c,max;
+clrscr();
+printf("Enter any three values :");
+scanf("%d%d%d",&a,&b,&c);
+if(a>b)
+{
+ if(a>c)
+ max=a;
+ else
+ max=c;
+ }
+else
+{
+ if(b>c)
+ max=b;
+ else
+ max=c;
+}
+printf("Maximum value :%d",max);
+getch();
+}
+
+WRITE A PROGRAMME CONSUMER NUMBER,CONSUMER NAME,PMR AND LMR CALICULATE
+AND DISPLAY TOTAL UNITS AND BILL AMOUNT?
+
+	     RATE PER UNIT=Rs3.50
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<process.h>
+void main()
+{
+int cno,pmr,lmr,tu;
+char cname[20];
+float total;
+clrscr();
+printf("Enter consumer number:");
+scanf("%d",&cno);
+printf("Enter consumer name:");
+fflush(stdin);
+gets(cname);
+printf("Enter present month reading:");
+scanf("%d",&pmr);
+printf("Enter last month reading:");
+scanf("%d",&lmr);
+if(pmr<lmr)
+{
+printf("Invalid reading");
+getch();
+exit(0);
+}
+tu=pmr-lmr;
+total=tu*3.50;
+clrscr();
+printf("Consumer number         :%d",cno);
+printf("\nConsumer name         :%s",cname);
+printf("\nPresent month reading :%d",pmr);
+printf("\nLast month reading    :%d",lmr);
+printf("\nTotal units           :%d",tu);
+printf("\nTotal bill amount     :%.2f",total);
+getch();
+}
+else if ladder statement:-
+
+This statement is also used for the series of decesions are involved.
+
+syn:-
+
+   if(expr-1)
+   {
+   statment  -1;
+   }
+   else if(expr -2)
+   {
+   ---------------
+   ----------------
+   }
+   else if (expr -n)
+   {
+   statements -n;
+   }
+   else
+   {
+   statment -else block
+   }
+
+
+	In the statement expression are evaluated from top to bottom.
+  If the condition is true the statements associated the block is executed
+  and the control transfer to the next statement.When all expressions are
+  false finally else block statements will be executed.
+
+  WRITE A PROGRAMME TO ACCEPT ANY THREE VALUES AND FIND THE MAXIMUM VLAUE
+  OF GIVEN THREE NUMBERS?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a,b,c,max;
+clrscr();
+printf("Enter any three values :");
+scanf("%d%d%d",&a,&b,&c);
+if(a>b && a>c)
+max=a;
+else if(b>c)
+max=b;
+else
+max=c;
+printf("Maximum value :%d",max);
+getch();
+}
+
+WRITE A PROGRAMME TO ENTER ANY CHARACTER AND DISPLAY GIVEN CHARACTER IS
+ALPHABET OR DIGIT OR SPECIAL CHARACTER?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+char  ch;
+clrscr();
+printf("Enter any character :");
+scanf("%c",&ch);
+if((ch>='A' && ch<='Z')||(ch>='a'&& ch<='z'))
+printf("Given character is alphabet ");
+else if(ch>='0' && ch<='9')
+printf("Given character is digit");
+else
+printf("Given character is special character ");
+getch();
+}
+
+WRITE A PROGRAMME TO ACCEPT ANY CHARACTER TO CHECK WHETHER THE GIVEN
+CHARACTER IS VOWEL,CONSONANT AND NOT ALPHABET?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+char  ch;
+clrscr();
+		 printf("Enter any character :");
+scanf("%c",&ch);
+if((ch>='A' && ch<='Z')||(ch>='a'&& ch<='z'))
+{
+if(ch=='a'||ch=='A'||ch=='e'||ch=='E'||ch=='i'||ch=='I'||ch=='o'||ch=='O'||ch=='u'||ch=='U')
+printf("Given character is vowel ");
+else
+printf("Given character is consonent");
+}
+else
+{
+printf("Given character is not alphabet ");
+}
+getch();
+}
+
+
+
+WRITE A PROGRAMME TO ENTER MONTH AND YEAR CALICULATE AND DISPLAY NO OF
+DAYS IN THE GIVEN MONTH?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int y,m,nd;
+clrscr();
+printf("Enter month & year :");
+scanf("%d%d",&m,&y);
+if(m==2)
+{
+if((y%4==0 && y%100!=0)||(y%400==0))
+nd=29;
+else
+nd=28;
+}
+else if(m==1||m==3||m==5||m==7||m==8||m==10||m==12)
+nd=31;
+else
+nd=30;
+printf("Number of days in the given month=%d",nd);
+getch();
+}
+
+WRITE A PROGRAMME TO ENTER SNO,SNAME,MARKS IN C,CPP AND UNIX CALICULATE
+AND DISPLAY TOTAL MARKS, AVERAGE,RESULT AND DIVISION?
+
+
+#include<stdio.h>
+#include<conio.h>
+
+
+void main()
+{
+int sno,c,cpp,unix,total;
+char sname[10];
+float avg;
+clrscr();
+printf("Enter Student number :");
+scanf("%d",&sno);
+printf("Enter Student Name :");
+fflush(stdin);
+gets(sname);
+printf("Enter marks in c cppand unix:");
+scanf("%d%d%d",&c,&cpp,&unix);
+
+total=c+cpp+unix;
+avg=(float)total/3;
+
+printf("Student Number   :%d",sno);
+
+printf("\nStudent Name          :%s",sname);
+printf("\nMarks in c            :%d",c);
+printf("\nMarks in cpp          :%d",cpp);
+printf("\nMarks in unix         :%d",unix);
+printf("\nTotal      marks      :%d",total);
+printf("\nAverage               :%.2f",avg);
+ if(c>=50 && cpp>=50 && unix>=50)
+ {
+  printf("\nResult               :Pass");
+
+  if(avg>=60)
+  printf("\nDivision             :First");
+  else
+  printf("\nDivision             :Second");
+
+ }
+ else
+ {
+  printf("\nResult               :Fail");
+
+ }
+ getch();
+ }
+WRITE A PROGRAMME CNO,CNAME,PMR,LMR,CALICULATE DISPLAY TOTAL UNITS AND BILL
+AMOUNT BY THE FOLLOWING TABLE?
+
+UNITS		RATE/UNIT
+
+0-50		1.45
+
+51-100    	2.60
+
+101-200		3.60
+
+201-300		5.75
+
+301>500		6.75
+
+   >500         7.25
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<process.h>
+void main()
+{
+ int cno,pmr,lmr,tu;
+ char cname[20];
+ float bamt;
+ clrscr();
+ printf("Enter Conumer number :");
+ scanf("%d",&cno);
+ printf("Enter Conumer name :");
+ fflush(stdin);
+ gets(cname);
+ printf("Enter Present month reading :");
+ scanf("%d",&pmr);
+ printf("Enter Last month reading :");
+ scanf("%d",&lmr);
+ if(pmr<lmr)
+ {
+  printf("Invalid reading");
+  getch();
+  exit(0);
+  }
+ tu=pmr-lmr;
+
+ if(tu<=50)
+ bamt=50*1.45;
+
+ else if(tu<=100)
+ bamt=50*1.45+(tu-50)*2.60;
+
+ else if(tu<=200)
+ bamt=50*1.45+50*2.60+(tu-100)*3.60;
+
+ else if(tu<=300)
+ bamt=50*1.45+50*2.60+100*3.60+(tu-200)*5.75;
+
+ else if(tu<=500)
+ bamt=50*1.45+50*2.60+100*3.60+100*5.75+(tu-300)*6.75;
+ else
+ bamt=50*1.45+50*2.60+100*3.60+100*5.75+200*6.75+(tu-500)*7.25;
+ clrscr();
+ printf("Consumer     Number      :%d",cno);
+ printf("\nConsumer   Name        :%s",cname);
+ printf("\nPresent month reading  :%d",pmr);
+ printf("\nLast  month reading    :%d",lmr);
+ printf("\nTotal units            :%d",tu);
+ printf("\nTotal bill amount      :%.2f",bamt);
+ getch();
+ }
+
+WRITE A PROGRAMME TO ENTER ENO,ENAME,GRADE AND BASIC SALARY CALICULATE AND
+DISPLAY HRA,DA,TA,IT,PF,GROSS SALARY,DEDUCTIONS AND NET SALARY BY THE
+FOLLOWING TABLE?
+
+GRADE          BASIC        	HRA    	DA       TA      IT     PF
+
+A              <=2000            6%     10%       2%      0%     8%
+
+A           >2000 AND <=4000     8%     15%       4%      2%    10%
+
+A               >4000           10%     20%       5%      4%    12%
+
+
+B              <=3000            7%      8%       2%      0%     8%
+B               >3000            9%     10%       3%      1%    10%
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<process.h>
+
+void main()
+{
+int eno;
+char ename[10],gr;
+float basic,hra,da,ta,it,pf,gross,ded,net;
+
+clrscr();
+printf("Enter employee number :");
+scanf("%d",&eno);
+printf("Enter employee name  :");
+fflush(stdin);
+gets(ename);
+printf("Enter grade:");
+fflush(stdin);
+scanf("%c",&gr);
+if(gr!='a'&& gr!='A' && gr!='b' && gr!='B')
+{
+printf("Invalid grade ");
+getch();
+exit(0);
+}
+printf("Enter basic salary  :");
+scanf("%f",&basic);
+ if(gr=='a' ||gr=='A')
+{
+ if(basic<=2000)
+ {
+ hra=basic*6/100;
+ da=basic*10/100;
+ ta=basic*2/100;
+ it=0;
+ pf=basic*8/100;
+ }
+else if(basic<=4000)
+ {
+  hra=basic*8/100;
+  da=basic*15/100;
+  ta=basic*4/100;
+  it=basic*2/100;
+  pf=basic*10/100;
+  }
+else
+ {
+  hra=basic*10/100;
+  da=basic*20/100;
+  ta=basic*5/100;
+  it=basic*4/100;
+  pf=basic*12/100;
+ }
+}
+else
+{
+ if(basic<=3000)
+ {
+ hra=basic*7/100;
+ da=basic*8/100;
+ ta=basic*2/100;
+ it=0;
+ pf=basic*8/100;
+}
+else
+ {
+ hra=basic*9/100;
+ da=basic*10/100;
+ ta=basic*3/100;
+ it=basic*1/100;
+ pf=basic*10/100;
+ }
+}
+gross=basic+hra+da+ta;
+ded=it+pf;
+net=gross-ded;
+clrscr();
+printf("Employee number   :%d",eno);
+printf("\nEmployee name   :%s",ename);
+printf("\nEmployee grade  :%c",gr);
+printf("\nBasic salary    :%.2f",basic);
+printf("\nHra             :%.2f",hra);
+printf("\nda              :%.2f",da);
+printf("\nta              :%.2f",ta);
+printf("\nit              :%.2f",it);
+printf("\npf              :%.2f",pf);
+printf("\nGross salary    :%.2f",gross);
+printf("\nDeductions      :%.2f",ded);
+printf("\nNetsalary       :%.2f",net);
+getch();
+}
+
+   WRITE A PROGRAMME TO ENTER DEALERNO,DEALERNAME,DEALER REGION,NO OF
+   LITERS PETROL SOLD,NO OF LITERS DIESEL SOLD,NO OF LITERS KEROSENE SOLD?
+   DEALERS REGIONS ARE
+
+   N   NORTH
+   E   EAST
+   W   WEST
+   S   SOUTH
+   CALICULATE AND DISPLAY TOTAL REGION COLLECTION BY THE FOLLOWING TABLE?
+
+
+REGION           PETROL           DIESEL             KEROSENE
+
+N                52.25            31.75               22.15
+
+S                51.75            31.35               21.50
+
+E                49.85            28.25               18.75
+
+W                52.15            32.45               21.75
+
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<process.h>
+
+
+void main()
+{
+int dno,np,nd,nk;
+char dname[20],reg;
+float pa,da,ka,ta;
+clrscr();
+
+
+printf("Enter dealer no:");
+scanf("%d",&dno);
+
+
+printf("Enter dealer name :");
+fflush(stdin);
+gets(dname);
+
+
+printf("Enter dealer region :");
+scanf("%c",&reg);
+
+if(reg>=97 && reg<=122)
+reg=reg-32;
+
+
+if(reg!='N'  && reg!='S' && reg!='W' &&reg!='E')
+{
+printf("Invalid region");
+getch();
+exit(0);
+}
+printf("Enter No of Ltrs petrol sold:");
+scanf("%d",&np);
+
+printf("Enter No of Ltrs Disel sold:");
+scanf("%d",&nd);
+
+printf("Enter No of Ltrs kerosene sold:");
+scanf("%d",&nk);
+
+
+if(reg=='N')
+{
+pa=np*52.25;
+da=nd*31.75;
+ka=nk*22.15;
+}
+
+
+else if(reg=='S')
+{
+pa=np*51.75;
+da=nd*31.35;
+ka=nk*21.50;
+}
+
+else if(reg=='E')
+{
+pa=np*49.85;
+da=nd*28.25;
+ka=nk*18.75;
+}
+
+else
+{
+pa=np*52.15;
+da=nd*32.45;
+ka=nk*21.75;
+}
+
+ta=pa+da+ka;
+
+
+clrscr();
+printf("\nDealer no          :%d",dno);
+printf("\nDealer name        :%s",dname);
+printf("\nDealer region      :%c",reg);
+printf("\nNo of ltrs petrol  :%d",np);
+printf("\nNo of ltrs diesel   :%d",nd);
+printf("\nNo of ltrs kerosene:%d",nk);
+printf("\nPetrol amount      :%.2f",pa);
+printf("\nDiesel amount      :%.2f",da);
+printf("\nKerosene amount    :%.2f",ka);
+printf("\nTotal amount       :%.2f",ta);
+getch();
+}
+
+SWITCH STATEMENT:-
+
+It is a multiway conditional statement using c language.It is mainly used in
+situations where there is needed to pick one alternative among many
+alternatives.
+
+syntax:-
+
+switch(exp)
+{
+case value1:
+	statements-1;
+	break;
+case value2:
+	statements-2;
+	break;
+	-----------
+	-----------
+case value-n:
+	statements-n;
+	break;
+default:
+	default statements;
+	break;
+}
+
+	The switch statement tests the value of given variable or expression
+  agains a list of case values.When a match is found,a block of statements
+  associated the case is executed.Otherwise the default block statement is
+  will be executed.
+
+NOTE 1:-Switch statement the value of expression or variable is integer
+  (int,char)are cannot pass string and floating values.
+
+NOTE 2:In switch statement the default block is optional.
+
+break;
+  It is a unconditional control statement, it terminates a switch statement
+  and a loop statment
+
+  syn:-
+  break;
+
+
+WRITE A PROGRAMME TO ACCEPT ANY TWO VALUES AND TEXT ALL ARITHMATIC OPERATIONS
+USING SWITCH STATEMENT?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a,b,opt;
+clrscr();
+printf("Enter any two values :");
+scanf("%d%d",&a,&b);
+printf("1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.Modulus");
+
+printf("\nEnter your option   :");
+scanf("%d",&opt);
+switch(opt)
+{
+   case 1:
+	 printf("\nAddition of  %d   and  %d   is   :%d",a,b,a+b);
+	 break;
+   case 2:
+	 printf("\nSubtraction of  %d   and  %d   is   :%d",a,b,a-b);
+	 break;
+   case 3:
+	 printf("\nMultiplication of  %d   and  %d   is   :%d",a,b,a*b);
+	 break;
+
+   case 4:
+	 printf("\nDivision of  %d   and  %d   is   :%d",a,b,a/b);
+	 break;
+
+    case 5:
+	 printf("\nModulus of  %d   and  %d   is   :%d",a,b,a%b);
+	 break;
+    default:
+	 printf("\nInvalid option");
+        }
+     getch();
+  }
+
+
+
+
+
+
+
+
+
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a,b;
+char opt;
+clrscr();
+printf("Enter any two values :");
+scanf("%d%d",&a,&b);
+printf("A.Addition\nS.Subtraction\nM.Multiplication\nD.Division\nR.Modulus");
+printf("\nEnter your option   :");
+fflush(stdin);
+scanf("%c",&opt);
+switch(opt)
+{
+   case 'a':
+   case 'A':
+	 printf("\nAddition of  %d   and  %d   is   :%d",a,b,a+b);
+	 break;
+   case 's':
+   case 'S':
+	 printf("\nSubtraction of  %d   and  %d   is   :%d",a,b,a-b);
+	 break;
+   case 'm':
+   case 'M':
+	 printf("\nMultiplication of  %d   and  %d   is   :%d",a,b,a*b);
+	 break;
+   case 'd':
+   case 'D':
+	 printf("\nDivision of  %d   and  %d   is   :%d",a,b,a/b);
+	 break;
+    case 'r':
+    case 'R':
+	 printf("\nModulus of  %d   and  %d   is   :%d",a,b,a%b);
+	 break;
+    default:
+	 printf("\nInvalid option");
+	 }
+	 getch();
+      }
+  WRITE A  MENU PROGRAMME TO THE ELECTRIC BILL THE FOLLOWING
+  TABLE?
+
+  FOR DOMESTIC                                       COMMERCIAL
+ 컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴	       컴컴컴컴컴컴컴컴컴컴컴컴컴�
+
+  UNITS         RATE/UNIT   SERVICE            UNITS    RATE/UNIT    SERVICE
+			    CHARGE                                   CHARGE
+
+
+  0-50            1.45       25                0-50       3.85        30
+
+  51-100          2.80       30               51-100      6.20        35
+
+  101-200         3.05       35               >100        6.50        40
+
+  201-300         4.75       40
+
+  301-500         6.00       45
+
+     >500         6.25       45
+
+
+EXTRAS:-
+RS 0.06 PER UNIT POWER TAX
+
+
+
+
+
+
+
+
+  FOR DOMESTIC                                     COMMERCIAL
+ 컴컴컴컴컴컴컴컴                                컴컴컴컴컴컴컴컴
+
+  UNITS         RATE/UNIT                        UNITS             RATE/UNIT
+
+  0-50            1.45                           0-50                3.90
+
+  51-100          2.80                            >50                6.25
+
+  101-200         3.05
+
+  201-300         4.75
+
+     >300         5.50
+
+
+EXTRAS:-                                         EXTRAS:-
+
+RS 0.06 PER UNIT POWER TAX                       RS 0.06 PER UNIT POWER TAX
+
+RS 10/- SERVICE CHARGE FOR SINGLE PHASE          RS 20/-SERVICE CHARGE FOR
+						 SINGLE PHASE
+
+RS 20/- SERVICE CHARGE FOR THREE PHASE           RS 50/- SERVICE CHARGE FOR
+						 THREE PHASE
+
+
+
+
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<process.h>
+void main()
+{
+int cno,pmr,lmr,tu,ph;
+char cname[20],type;
+float bill,pt,sc,ta;
+clrscr();
+printf("\t\t\t   MENU"   );
+printf("\n\t\t----------");
+printf("\n\t\t  Domestic(d/D)");
+printf("\n\t\t  Commercial(c/C)");
+printf("\n\t\t----------");
+printf("\nEnter your option:");
+scanf("%c",&type);
+if(type!='c' && type!='C' && type!='d' && type!='D')
+{
+printf("\n Invalid option");
+getch();
+exit(0);
+}
+printf("\nEnter your phase (1 or 3) :");
+scanf("%d",&ph);
+if(ph!=1 && ph!=3)
+{
+printf("\nInvalid option");
+getch();
+exit(0);
+}
+clrscr();
+printf("Enter consumer number :");
+scanf("%d",&cno);
+printf("Enter consumer name   :");
+fflush(stdin);
+gets(cname);
+printf("Enter present month reading :");
+scanf("%d",&pmr);
+printf("Enter last month reading :");
+scanf("%d",&lmr);
+if(lmr>pmr)
+{
+printf("Invalid reading ");
+getch();
+exit(0);
+}
+tu=pmr-lmr;
+switch(type)
+{
+ case 'd':
+ case 'D':
+ if(tu<=50)
+ bill=50*1.45;
+ else if(tu<=100)
+ bill=(50*1.45)+(tu-50)*2.80;
+ else if(tu<=200)
+ bill=(50*1.45)+(50*2.80)+(tu-100)*3.05;
+ else if(tu<=300)
+ bill=(50*1.45)+(50*2.80)+(100*3.05)+(tu-200)*4.75;
+ else
+ bill=(50*1.45)+(50*2.80)+(100*3.05)+(100*4.75)+(tu-300)*5.50;
+ pt=tu*0.06;
+ if(ph==1)
+   sc=10.00;
+   else
+   sc=20.00;
+   ta=bill+pt+sc;
+   break;
+
+   case 'c':
+   case 'C':
+   if(tu<=50)
+   bill=50*3.50;
+   else
+   bill=(50*3.50)+(tu-50)*6.25;
+   pt=tu*0.06;
+   if(ph==1)
+   sc=20.00;
+   else
+   sc=50.00;
+   ta=bill+pt+sc;
+   break;
+   }
+   clrscr();
+   printf("\n Consumer number        :%d",cno);
+   printf("\n Consumer name          :%s",cname);
+   printf("\n type(D-dom C-com)      :%c",type);
+   printf("\n phase type(1 or 3)     :%d",ph);
+   printf("\n present month reading  :%d",pmr);
+   printf("\n last month reading     :%d",lmr);
+   printf("\n Total units            :%d",tu);
+   printf("\n Bill amount            :%.2f",bill);
+   printf("\n service charge         :%.2f",sc);
+   printf("\n powertax               :%.2f",pt);
+   printf("\n Total amount           :%.2f",ta);
+   getch();
+   }
+
+UN CONDITIONAL CONTROL STATEMENTS:-
+break;
+  It is a unconditional control statement, it terminates a switch statement
+  and a loop statment
+
+  syn:-
+     break;
+
+continue:- It is a un conditional control statement it terminates the switch
+  looping statements it passes the control.
+
+  syn:-
+
+  continue;
+  control to the end of the near most enclosing while , do or for statement
+  at which point the loop continuation condition is reevaluated.
+
+goto:-
+
+  It is a unconditional control statement which is used to alter the
+  execution of the programme  sequence by transfer of control to the
+  some other part of the programme.
+
+  syn:-
+  goto label;
+
+   lb:
+	where label is valid c identifier used to the label of the
+  destination such that the control could transfer.
+
+  syn:-
+  identifier:
+
+WRITE A PROGRAMME TO DISPLAY NATURAL NOS FROM  1 TO GIVEN NO?
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,i=1;
+clrscr();
+printf("Enter any no:");
+scanf("%d",&n);
+printf("\nNatural numbers from 1 to %d:",n);
+lb:
+printf("%d\t",i);
+i++;
+if(i<=n)
+goto lb;
+getch();
+}
+
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n;
+clrscr();
+printf("Enter any no:");
+scanf("%d",&n);
+if(n==1)
+goto lb1;
+if(n==2)
+goto lb2;
+if(n==3)
+goto lb3;
+printf("Welcome\n");
+lb1:
+printf("BDPS\n");
+lb2:
+printf("VIJAYAWADA\n");
+lb3:
+printf(\n"Niit");
+getch();
+}
+
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n;
+clrscr();
+printf("Enter any no:");
+scanf("%d",&n);
+if(n==1)
+goto lb1;
+if(n==2)
+goto lb2;
+printf("Welcome\n");
+goto lb;
+lb1:
+printf("BDPS\n");
+goto lb;
+lb2:
+printf("VIJAYAWADA\n");
+lb:
+getch();
+}
+
+
+gotoxy:- It is a function and it used to move the cursor to specify the
+location in text mode window.
+
+decleration:-
+   void gotoxy(int x,int y);
+
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+clrscr();
+gotoxy(36,12);
+printf("Welcome");
+getch();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+	 ----------------------------------------------------
+			BDPS SOFTWARE LIMITED
+
+			      VIJAYAWADA
+
+	------------------------------------------------------
+
+	S NUMBER      :				SNAME:
+
+	MARKS IN C    :
+	MARKS IN CPP  :
+	MARKS IN UNIX :
+
+	TOTAL MARKS   :			        AVERAGE:
+
+	RESULT        :				DIVISION:
+
+	------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+ int sno,c,cpp,unix,tot;
+ char sname[20];
+ float avg;
+ clrscr();
+ gotoxy(15,3);
+ printf("----------------------------------------------");
+ gotoxy(25,4);
+ printf("BDPS SOFTWARE LIMITED");
+ gotoxy(30,5);
+ printf("VIJAYAWADA");
+ gotoxy(15,6);
+ printf("----------------------------------------------");
+ gotoxy(18,8);
+ printf("SNO :");
+ gotoxy(40,8);
+ printf("SNAME :");
+ gotoxy(18,10);
+ printf("Marks in c   :");
+ gotoxy(18,11);
+ printf("Marks in cpp :");
+ gotoxy(18,12);
+ printf("Marks in unix:");
+ gotoxy(18,14);
+ printf("Total marks:");
+ gotoxy(40,14);
+ printf("Average:");
+ gotoxy(18,16);
+ printf("Result :");
+ gotoxy(40,16);
+ printf("Division:");
+ gotoxy(15,18);
+ printf("----------------------------------------------");
+
+ gotoxy(24,8);
+ scanf("%d",&sno);
+ gotoxy(48,8);
+ fflush(stdin);
+ gets(sname);
+
+ lb1:
+ gotoxy(34,10);
+ scanf("%d",&c);
+ if(c>100)
+ {
+ gotoxy(35,23);
+ printf("Invalid marks ");
+ getch();
+ gotoxy(35,23);
+ printf("              ");
+ gotoxy(34,10);
+ printf("        ");
+ goto lb1;
+ }
+
+ lb2:
+ gotoxy(34,11);
+ scanf("%d",&cpp);
+ if(cpp>100)
+ {
+ gotoxy(35,23);
+ printf("Invalid marks ");
+ getch();
+ gotoxy(35,23);
+ printf("              ");
+
+ gotoxy(34,11);
+ printf("        ");
+ goto lb2;
+ }
+ lb3:
+ gotoxy(34,12);
+ scanf("%d",&unix);
+ if(unix>100)
+ {
+ gotoxy(35,23);
+ printf("Invalid marks ");
+ getch();
+ gotoxy(35,23);
+ printf("              ");
+
+ gotoxy(34,12);
+ printf("        ");
+ goto lb3;
+ }
+tot=c+cpp+unix;
+avg=tot/3;
+gotoxy(32,14);
+printf("%d",tot);
+gotoxy(51,14);
+printf("%.2f",avg);
+if(c>=50 && cpp>=50 && unix>=50)
+{
+gotoxy(32,16);
+printf("PASS");
+gotoxy(51,16);
+if(avg>=60)
+printf("First");
+else
+printf("Second");
+}
+else
+{
+gotoxy(32,16);
+printf("Fail");
+gotoxy(51,16);
+printf("No_div");
+}
+getch();
+}
+
+
+
