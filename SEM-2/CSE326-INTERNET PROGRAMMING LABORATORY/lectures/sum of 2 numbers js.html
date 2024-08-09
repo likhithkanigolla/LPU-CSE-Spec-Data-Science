@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Suum of 2 numbers</title>
+	<script type="text/javascript">
+		function add() 
+		{
+			var a,b,c;
+			a=parseInt(document.getElementById("first").value);
+			b=parseInt(document.getElementById("second").value);
+		    c= a + b;
+		    document.getElementById("answer").value= c;
+		}
+	</script>
+</head>
+<body>
+	Enter the first number : <input id="first"><br>
+	Enter the first number : <input id="second"><br><br>
+<button ondblclick="add()">Add 1</button>
+<button onclick="add()">Add 2</button><br>
+<input id="answer"><br>
+</body>
+</html>

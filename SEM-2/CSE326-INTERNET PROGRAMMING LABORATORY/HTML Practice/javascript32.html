@@ -1,0 +1,39 @@
+<html>
+<head><title>Java Script</title></head>
+<body>
+    <table border="3">
+        <tr>
+            <td  onmouseover="fun1(this)" onmouseout="fun4(this)" width="32" height="32">A</td>
+            <td  onmouseover="fun2()" onmouseout="fun7" width="32" height="32">B</td>
+        </tr>
+        <tr>
+            <td  onmouseover="fun3()" onmouseout="fun7" width="32" height="32">C</td>
+            <td  onmouseover="fun1(this)" onmouseout="fun4(this)" width="32" height="32">D</td>
+        </tr>
+    </table>
+    <Script>
+        function fun1()
+            {
+                x.style.height="160px";
+                x.style.width="160px";
+            }
+        function fun2()
+            {
+                document.body.style.backgroundColor="blue";
+            }
+        function fun3()
+            {
+                document.body.style.backgroundColor="black";
+            }
+        function fun4()
+            {
+                x.style.height="100px";
+                x.style.width="100px";
+            }
+        function fun7()
+            {
+                document.body.style.backgroundColor="white";
+            }
+    </Script>
+</body>
+</html>

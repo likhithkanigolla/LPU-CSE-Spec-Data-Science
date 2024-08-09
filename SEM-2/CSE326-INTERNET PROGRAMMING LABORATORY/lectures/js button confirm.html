@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Button confirm</title>
+</head>
+<body>
+	<h2>Confirmation Button</h2>
+	<p>Click button to give a confirmation</p>
+<button onclick="myFunction()">I'll give a confirmation</button>
+<p id="demo"></p>
+<script>
+	function myFunction() {
+		var x;
+	if (confirm("You are in a Class room") == true) 
+		{x="You are now sitting in a Class room";}	
+	else
+		{x="You are not in a Class room";}
+	document.getElementById("demo").innerHTML=x;}
+</script>
+</body>
+</html>

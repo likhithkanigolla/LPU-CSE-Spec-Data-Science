@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<title>text bgcolor</title>
+<body>
+	<p> enter in input fields to change bgcolor to yellow
+    <br>
+    Enter your name: <input type="text" id="myinput" onfocus="focousfunction()" onblur="blurfunction()">
+	</p>
+
+	<script type="text/javascript">
+		function focousfunction()
+		{
+			//focus = changes bgcolor to yellow
+			document.getElementById("myinput").style.background = "yellow";
+		}
+		function blurfunction()
+		{
+			//no focus = changes bgcolor of input to red
+			document.getElementById("myinput").style.background = "red";
+		}
+	</script>
+</body>
+</html>
+BEE399

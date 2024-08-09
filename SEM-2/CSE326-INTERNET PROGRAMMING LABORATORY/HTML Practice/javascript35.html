@@ -1,0 +1,11 @@
+<html>
+    <head><title>Java Script</title></head>
+    <body>
+        <p>An object method is a function defination, stored as a property value.</p>
+        <p id="demo"></p>
+        <script>
+            var person={firstname:"John", lastname:"Doe", id:1234, fullname:function(){return this.firstname+" "+this.lastname+" "+this.id;}}
+            document.getElementById("demo").innerHTML=person.fullname();
+        </script>
+    </body>
+</html>

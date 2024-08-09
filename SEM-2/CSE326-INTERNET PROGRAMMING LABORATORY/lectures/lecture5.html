@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forms</title>
+</head>
+<body>
+	<h1>Feed Back form.</h1>
+	<form>
+		First name <input type="text" value="First.name"/><br><br>
+        Last name <input type="text" value="Last.name"/><br><br>
+        Password  <input type="Password" value="pass1"/><br><br>
+        <p>Services availed</p>
+        <input type="checkbox" name="check!">Delivery
+        <input type="checkbox" name="check!">Plumbing
+        <input type="checkbox" name="check!">Electrical
+        <input type="checkbox" name="check!">Repairs
+        <p>Are you satisfied with our services?</p>
+        <input type="radio" name="radio!">yes<br>
+        <input type="radio" name="radio!">no<br>
+        <p>Enter your suggestions :</p>
+        <textarea rows="5" cols="20" name="Description">
+        </textarea><br>
+        <input type="text" name="services" list="serv">
+        <datalist id="services">
+        	<option value="Delivery">
+        	<option value="Plumbing">
+        	<option value="Electrical">
+        	<option value="Repairs">
+        </datalist><br>
+        <input type="reset" name="reset" value="reset">
+        <input type="submit" name="submit" value="submit">
+
+	</form>
+</body>

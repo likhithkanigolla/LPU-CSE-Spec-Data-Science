@@ -1,0 +1,36 @@
+<html>
+    <head><title>Java Script</title></head>
+    <body>
+         <p>Select any number</p>
+        <select id="abc" onchange="my()">
+        <option value="1">1
+        <option value="2">2
+            <option value="3">3</option></select>
+        <p id="demo"></p>
+        
+        
+        <table border="3">
+            <tr><td>A</td></tr>
+        </table>
+        
+        <table border="3">
+            <tr><td>A</td><td>B</td></tr>
+            <tr><td>C</td><td>D</td></tr>
+        </table>
+        
+        <table border="3">
+            <tr><td>A</td><td>B</td><td>C</td></tr>
+            <tr><td>D</td><td>E</td><td>F</td></tr>
+            <tr><td>G</td><td>H</td><td>I</td></tr>
+        </table>
+        
+        <Script>
+            function my()
+            {
+                var x=document.getElementById("abc").value;
+                document.getElementById("demo").innerHTML="You selected:"+x;
+                x   
+            }
+        </Script>
+    </body>
+</html>

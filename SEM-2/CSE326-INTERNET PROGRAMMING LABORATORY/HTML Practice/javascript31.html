@@ -1,0 +1,22 @@
+<html>
+<head><title>Java Script</title></head>
+<body>
+    <form name="myForm">
+    Name:<input type="text" name="Email"><br><input type="button" value="Click" onclick="validateEmail()"></form>
+	<Script>
+	    function validateEmail()
+		{
+            var emailID=document.myForm.EMail.value;
+            atpos=emailID.indexOF("@");
+            if(atpos<1 || (dotpos-atpos<2))
+                {
+                    alert("Please enter correct email ID");
+                    document.myForm.EMail.focus();
+                    return false;
+                }
+            return(true);
+		}
+    
+	</Script>
+</body>
+</html>
